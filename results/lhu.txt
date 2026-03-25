@@ -1,0 +1,4415 @@
+Reading pref.tcl
+
+# 2024.1
+
+# vsim -c -do "run -all; quit -force" tb_top 
+# Start time: 21:58:06 on Mar 25,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# //  Questa Sim-64
+# //  Version 2024.1 win64 Feb  1 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.tb_top(fast)
+# run -all
+# Starting simulation...
+# ---------------------------------------------
+# Time: 105
+# debug_inst_pc: fffffffc
+# debug_wb_pc: 00000000
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 115
+# debug_inst_pc: 00000000
+# debug_wb_pc: 00000000
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 125
+# debug_inst_pc: 00000004
+# debug_wb_pc: 00000000
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 135
+# debug_inst_pc: 00000044
+# debug_wb_pc: 00000000
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 145
+# debug_inst_pc: 00000048
+# debug_wb_pc: 00000000
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 155
+# debug_inst_pc: 0000004c
+# debug_wb_pc: 00000000
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000004
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 165
+# debug_inst_pc: 00000050
+# debug_wb_pc: 00000000
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 175
+# debug_inst_pc: 00000054
+# debug_wb_pc: 00000008
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 185
+# debug_inst_pc: 00000058
+# debug_wb_pc: 00000048
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 195
+# debug_inst_pc: 0000005c
+# debug_wb_pc: 0000004c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 205
+# debug_inst_pc: 00000060
+# debug_wb_pc: 00000050
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 03
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 215
+# debug_inst_pc: 00000064
+# debug_wb_pc: 00000054
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 225
+# debug_inst_pc: 00000068
+# debug_wb_pc: 00000058
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 235
+# debug_inst_pc: 0000006c
+# debug_wb_pc: 0000005c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 06
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 245
+# debug_inst_pc: 00000070
+# debug_wb_pc: 00000060
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 255
+# debug_inst_pc: 00000074
+# debug_wb_pc: 00000064
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 08
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 265
+# debug_inst_pc: 00000078
+# debug_wb_pc: 00000068
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 09
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 275
+# debug_inst_pc: 0000007c
+# debug_wb_pc: 0000006c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0a
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 285
+# debug_inst_pc: 00000080
+# debug_wb_pc: 00000070
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0b
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 295
+# debug_inst_pc: 00000084
+# debug_wb_pc: 00000074
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0c
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 305
+# debug_inst_pc: 00000088
+# debug_wb_pc: 00000078
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0d
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 315
+# debug_inst_pc: 0000008c
+# debug_wb_pc: 0000007c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 325
+# debug_inst_pc: 00000090
+# debug_wb_pc: 00000080
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0f
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 335
+# debug_inst_pc: 00000094
+# debug_wb_pc: 00000084
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 10
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 345
+# debug_inst_pc: 00000098
+# debug_wb_pc: 00000088
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 11
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 355
+# debug_inst_pc: 0000009c
+# debug_wb_pc: 0000008c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 12
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 365
+# debug_inst_pc: 000000a0
+# debug_wb_pc: 00000090
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 13
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 375
+# debug_inst_pc: 000000a4
+# debug_wb_pc: 00000094
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 14
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 385
+# debug_inst_pc: 000000a8
+# debug_wb_pc: 00000098
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 15
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 395
+# debug_inst_pc: 000000ac
+# debug_wb_pc: 0000009c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 16
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 405
+# debug_inst_pc: 000000b0
+# debug_wb_pc: 000000a0
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 17
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 415
+# debug_inst_pc: 000000b4
+# debug_wb_pc: 000000a4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 18
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 425
+# debug_inst_pc: 000000b8
+# debug_wb_pc: 000000a8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 19
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 435
+# debug_inst_pc: 000000bc
+# debug_wb_pc: 000000ac
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 1a
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 445
+# debug_inst_pc: 000000c0
+# debug_wb_pc: 000000b0
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 1b
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 455
+# debug_inst_pc: 000000c4
+# debug_wb_pc: 000000b4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 1c
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 465
+# debug_inst_pc: 000000c8
+# debug_wb_pc: 000000b8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 1d
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 475
+# debug_inst_pc: 000000cc
+# debug_wb_pc: 000000bc
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 1e
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 485
+# debug_inst_pc: 000000d0
+# debug_wb_pc: 000000c0
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 1f
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 495
+# debug_inst_pc: 000000d4
+# debug_wb_pc: 000000c4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0a
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 505
+# debug_inst_pc: 000000d8
+# debug_wb_pc: 000000c8
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 000000c8
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 515
+# debug_inst_pc: 000000dc
+# debug_wb_pc: 000000cc
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 000000cc
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 525
+# debug_inst_pc: 000000e0
+# debug_wb_pc: 000000d0
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 000000dc
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 535
+# debug_inst_pc: 000000e4
+# debug_wb_pc: 000000d4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 545
+# debug_inst_pc: 000000e8
+# debug_wb_pc: 000000d8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 555
+# debug_inst_pc: 000000ec
+# debug_wb_pc: 000000dc
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 000000dc
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 565
+# debug_inst_pc: 000000f0
+# debug_wb_pc: 000000e0
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 000000fc
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 575
+# debug_inst_pc: 000000f4
+# debug_wb_pc: 000000e4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 000000dc
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 585
+# debug_inst_pc: 000000f8
+# debug_wb_pc: 000000e8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 80000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 595
+# debug_inst_pc: 000000fc
+# debug_wb_pc: 000000ec
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 7fffffff
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 605
+# debug_inst_pc: 00000100
+# debug_wb_pc: 000000f0
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 615
+# debug_inst_pc: 00000104
+# debug_wb_pc: 000000f4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 0000001f
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 625
+# debug_inst_pc: 00000108
+# debug_wb_pc: 000000f8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 635
+# debug_inst_pc: 0000010c
+# debug_wb_pc: 000000fc
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 645
+# debug_inst_pc: 00000110
+# debug_wb_pc: 00000100
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000100
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 655
+# debug_inst_pc: 00000114
+# debug_wb_pc: 00000104
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000114
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 665
+# debug_inst_pc: 00000118
+# debug_wb_pc: 00000108
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 000000fc
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 675
+# debug_inst_pc: 0000011c
+# debug_wb_pc: 0000010c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 685
+# debug_inst_pc: 00000120
+# debug_wb_pc: 00000110
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 695
+# debug_inst_pc: 00000124
+# debug_wb_pc: 00000114
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 03
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 705
+# debug_inst_pc: 00000128
+# debug_wb_pc: 00000118
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000118
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 715
+# debug_inst_pc: 0000012c
+# debug_wb_pc: 0000011c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000004
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 725
+# debug_inst_pc: 00000130
+# debug_wb_pc: 00000120
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000114
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 735
+# debug_inst_pc: 00000140
+# debug_wb_pc: 00000124
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0a
+# debug_wb_rf_wdata: 00000001
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 745
+# debug_inst_pc: 00000144
+# debug_wb_pc: 00000128
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0a
+# debug_wb_rf_wdata: 80000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 755
+# debug_inst_pc: 00000148
+# debug_wb_pc: 0000012c
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 18
+# debug_wb_rf_wdata: 00000144
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 765
+# debug_inst_pc: 0000014c
+# debug_wb_pc: 00000000
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 775
+# debug_inst_pc: 00000158
+# debug_wb_pc: 00000134
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 785
+# debug_inst_pc: 0000015c
+# debug_wb_pc: 00000144
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 795
+# debug_inst_pc: 00000160
+# debug_wb_pc: 00000148
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 14
+# debug_wb_rf_wdata: 0000015c
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 805
+# debug_inst_pc: 00000164
+# debug_wb_pc: 00000000
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 815
+# debug_inst_pc: 00000168
+# debug_wb_pc: 00000150
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 825
+# debug_inst_pc: 0000016c
+# debug_wb_pc: 0000015c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 835
+# debug_inst_pc: 00000170
+# debug_wb_pc: 00000160
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000160
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 845
+# debug_inst_pc: 00000174
+# debug_wb_pc: 00000164
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000174
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 855
+# debug_inst_pc: 00000178
+# debug_wb_pc: 00000168
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 865
+# debug_inst_pc: 0000017c
+# debug_wb_pc: 0000016c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0a
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 875
+# debug_inst_pc: 00000180
+# debug_wb_pc: 00000170
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 885
+# debug_inst_pc: 00000184
+# debug_wb_pc: 00000174
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 895
+# debug_inst_pc: 00000188
+# debug_wb_pc: 00000178
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 905
+# debug_inst_pc: 0000018c
+# debug_wb_pc: 0000017c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 915
+# debug_inst_pc: 00000190
+# debug_wb_pc: 00000180
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 925
+# debug_inst_pc: 00000194
+# debug_wb_pc: 00000184
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 03
+# debug_wb_rf_wdata: 00000002
+# debug_data: 00000000
+# ---------------------------------------------
+# Time: 935
+# debug_inst_pc: 00000198
+# debug_wb_pc: 00000188
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 14
+# debug_wb_rf_wdata: 0000063c
+# debug_data: 00000002
+# ---------------------------------------------
+# Time: 945
+# debug_inst_pc: 0000019c
+# debug_wb_pc: 0000018c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00000001
+# debug_data: 00000002
+# ---------------------------------------------
+# Time: 955
+# debug_inst_pc: 000001a0
+# debug_wb_pc: 00000190
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00000001
+# debug_data: 00000002
+# ---------------------------------------------
+# Time: 965
+# debug_inst_pc: 000001a4
+# debug_wb_pc: 00000194
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000002
+# ---------------------------------------------
+# Time: 975
+# debug_inst_pc: 000001a8
+# debug_wb_pc: 00000198
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000002
+# ---------------------------------------------
+# Time: 985
+# debug_inst_pc: 000001ac
+# debug_wb_pc: 0000019c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 03
+# debug_wb_rf_wdata: 00000003
+# debug_data: 00000002
+# ---------------------------------------------
+# Time: 995
+# debug_inst_pc: 000001b0
+# debug_wb_pc: 000001a0
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 1c
+# debug_wb_rf_wdata: 0000063c
+# debug_data: 00000003
+# ---------------------------------------------
+# Time: 1005
+# debug_inst_pc: 000001b4
+# debug_wb_pc: 000001a4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00000003
+# debug_data: 00000003
+# ---------------------------------------------
+# Time: 1015
+# debug_inst_pc: 000001b8
+# debug_wb_pc: 000001a8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00000007
+# debug_data: 00000003
+# ---------------------------------------------
+# Time: 1025
+# debug_inst_pc: 000001bc
+# debug_wb_pc: 000001ac
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000003
+# ---------------------------------------------
+# Time: 1035
+# debug_inst_pc: 000001c0
+# debug_wb_pc: 000001b0
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000003
+# ---------------------------------------------
+# Time: 1045
+# debug_inst_pc: 000001c4
+# debug_wb_pc: 000001b4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 03
+# debug_wb_rf_wdata: 00000004
+# debug_data: 00000003
+# ---------------------------------------------
+# Time: 1055
+# debug_inst_pc: 000001c8
+# debug_wb_pc: 000001b8
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 0000063c
+# debug_data: 00000004
+# ---------------------------------------------
+# Time: 1065
+# debug_inst_pc: 000001cc
+# debug_wb_pc: 000001bc
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000004
+# ---------------------------------------------
+# Time: 1075
+# debug_inst_pc: 000001d0
+# debug_wb_pc: 000001c0
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: ffff8000
+# debug_data: 00000004
+# ---------------------------------------------
+# Time: 1085
+# debug_inst_pc: 000001d4
+# debug_wb_pc: 000001c4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000004
+# ---------------------------------------------
+# Time: 1095
+# debug_inst_pc: 000001d8
+# debug_wb_pc: 000001c8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000004
+# ---------------------------------------------
+# Time: 1105
+# debug_inst_pc: 000001dc
+# debug_wb_pc: 000001cc
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 03
+# debug_wb_rf_wdata: 00000005
+# debug_data: 00000004
+# ---------------------------------------------
+# Time: 1115
+# debug_inst_pc: 000001e0
+# debug_wb_pc: 000001d0
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 0c
+# debug_wb_rf_wdata: 0000063c
+# debug_data: 00000005
+# ---------------------------------------------
+# Time: 1125
+# debug_inst_pc: 000001e4
+# debug_wb_pc: 000001d4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 80000000
+# debug_data: 00000005
+# ---------------------------------------------
+# Time: 1135
+# debug_inst_pc: 000001e8
+# debug_wb_pc: 000001d8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000005
+# ---------------------------------------------
+# Time: 1145
+# debug_inst_pc: 000001ec
+# debug_wb_pc: 000001dc
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000005
+# ---------------------------------------------
+# Time: 1155
+# debug_inst_pc: 000001f0
+# debug_wb_pc: 000001e0
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000005
+# ---------------------------------------------
+# Time: 1165
+# debug_inst_pc: 000001f4
+# debug_wb_pc: 000001e4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 03
+# debug_wb_rf_wdata: 00000006
+# debug_data: 00000005
+# ---------------------------------------------
+# Time: 1175
+# debug_inst_pc: 000001f8
+# debug_wb_pc: 000001e8
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 14
+# debug_wb_rf_wdata: 0000063c
+# debug_data: 00000006
+# ---------------------------------------------
+# Time: 1185
+# debug_inst_pc: 000001fc
+# debug_wb_pc: 000001ec
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 80000000
+# debug_data: 00000006
+# ---------------------------------------------
+# Time: 1195
+# debug_inst_pc: 00000200
+# debug_wb_pc: 000001f0
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: ffff8000
+# debug_data: 00000006
+# ---------------------------------------------
+# Time: 1205
+# debug_inst_pc: 00000204
+# debug_wb_pc: 000001f4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 80004000
+# debug_data: 00000006
+# ---------------------------------------------
+# Time: 1215
+# debug_inst_pc: 00000208
+# debug_wb_pc: 000001f8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 80004000
+# debug_data: 00000006
+# ---------------------------------------------
+# Time: 1225
+# debug_inst_pc: 0000020c
+# debug_wb_pc: 000001fc
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 03
+# debug_wb_rf_wdata: 00000007
+# debug_data: 00000006
+# ---------------------------------------------
+# Time: 1235
+# debug_inst_pc: 00000210
+# debug_wb_pc: 00000200
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 1c
+# debug_wb_rf_wdata: 0000063c
+# debug_data: 00000007
+# ---------------------------------------------
+# Time: 1245
+# debug_inst_pc: 00000214
+# debug_wb_pc: 00000204
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: aaaab000
+# debug_data: 00000007
+# ---------------------------------------------
+# Time: 1255
+# debug_inst_pc: 00000218
+# debug_wb_pc: 00000208
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: aaaaaaab
+# debug_data: 00000007
+# ---------------------------------------------
+# Time: 1265
+# debug_inst_pc: 0000021c
+# debug_wb_pc: 0000020c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00030000
+# debug_data: 00000007
+# ---------------------------------------------
+# Time: 1275
+# debug_inst_pc: 00000220
+# debug_wb_pc: 00000210
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 0002fe7d
+# debug_data: 00000007
+# ---------------------------------------------
+# Time: 1285
+# debug_inst_pc: 00000224
+# debug_wb_pc: 00000214
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: ffff0081
+# debug_data: 00000007
+# ---------------------------------------------
+# Time: 1295
+# debug_inst_pc: 00000228
+# debug_wb_pc: 00000218
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: ffff0000
+# debug_data: 00000007
+# ---------------------------------------------
+# Time: 1305
+# debug_inst_pc: 0000022c
+# debug_wb_pc: 0000021c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: ffff0081
+# debug_data: 00000007
+# ---------------------------------------------
+# Time: 1315
+# debug_inst_pc: 00000230
+# debug_wb_pc: 00000220
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 03
+# debug_wb_rf_wdata: 0000001e
+# debug_data: 00000007
+# ---------------------------------------------
+# Time: 1325
+# debug_inst_pc: 00000234
+# debug_wb_pc: 00000224
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 18
+# debug_wb_rf_wdata: 0000063c
+# debug_data: 0000001e
+# ---------------------------------------------
+# Time: 1335
+# debug_inst_pc: 00000238
+# debug_wb_pc: 00000228
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00030000
+# debug_data: 0000001e
+# ---------------------------------------------
+# Time: 1345
+# debug_inst_pc: 0000023c
+# debug_wb_pc: 0000022c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 0002fe7d
+# debug_data: 0000001e
+# ---------------------------------------------
+# Time: 1355
+# debug_inst_pc: 00000240
+# debug_wb_pc: 00000230
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: aaaab000
+# debug_data: 0000001e
+# ---------------------------------------------
+# Time: 1365
+# debug_inst_pc: 00000244
+# debug_wb_pc: 00000234
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: aaaaaaab
+# debug_data: 0000001e
+# ---------------------------------------------
+# Time: 1375
+# debug_inst_pc: 00000248
+# debug_wb_pc: 00000238
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 0001fefe
+# debug_data: 0000001e
+# ---------------------------------------------
+# Time: 1385
+# debug_inst_pc: 0000024c
+# debug_wb_pc: 0000023c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 00020000
+# debug_data: 0000001e
+# ---------------------------------------------
+# Time: 1395
+# debug_inst_pc: 00000250
+# debug_wb_pc: 00000240
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 0001fefe
+# debug_data: 0000001e
+# ---------------------------------------------
+# Time: 1405
+# debug_inst_pc: 00000254
+# debug_wb_pc: 00000244
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 03
+# debug_wb_rf_wdata: 0000001f
+# debug_data: 0000001e
+# ---------------------------------------------
+# Time: 1415
+# debug_inst_pc: 00000258
+# debug_wb_pc: 00000248
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 14
+# debug_wb_rf_wdata: 0000063c
+# debug_data: 0000001f
+# ---------------------------------------------
+# Time: 1425
+# debug_inst_pc: 0000025c
+# debug_wb_pc: 0000024c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: ff000000
+# debug_data: 0000001f
+# ---------------------------------------------
+# Time: 1435
+# debug_inst_pc: 00000260
+# debug_wb_pc: 00000250
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: ff000000
+# debug_data: 0000001f
+# ---------------------------------------------
+# Time: 1445
+# debug_inst_pc: 00000264
+# debug_wb_pc: 00000254
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: ff010000
+# debug_data: 0000001f
+# ---------------------------------------------
+# Time: 1455
+# debug_inst_pc: 00000268
+# debug_wb_pc: 00000258
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: ff010000
+# debug_data: 0000001f
+# ---------------------------------------------
+# Time: 1465
+# debug_inst_pc: 0000026c
+# debug_wb_pc: 0000025c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 03
+# debug_wb_rf_wdata: 00000020
+# debug_data: 0000001f
+# ---------------------------------------------
+# Time: 1475
+# debug_inst_pc: 00000270
+# debug_wb_pc: 00000260
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 1c
+# debug_wb_rf_wdata: 0000063c
+# debug_data: 00000020
+# ---------------------------------------------
+# Time: 1485
+# debug_inst_pc: 00000274
+# debug_wb_pc: 00000264
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: ffffffff
+# debug_data: 00000020
+# ---------------------------------------------
+# Time: 1495
+# debug_inst_pc: 00000278
+# debug_wb_pc: 00000268
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: ffffffff
+# debug_data: 00000020
+# ---------------------------------------------
+# Time: 1505
+# debug_inst_pc: 0000027c
+# debug_wb_pc: 0000026c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: ffffffff
+# debug_data: 00000020
+# ---------------------------------------------
+# Time: 1515
+# debug_inst_pc: 00000280
+# debug_wb_pc: 00000270
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: ffffffff
+# debug_data: 00000020
+# ---------------------------------------------
+# Time: 1525
+# debug_inst_pc: 00000284
+# debug_wb_pc: 00000274
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 03
+# debug_wb_rf_wdata: 00000021
+# debug_data: 00000020
+# ---------------------------------------------
+# Time: 1535
+# debug_inst_pc: 00000288
+# debug_wb_pc: 00000278
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 0000063c
+# debug_data: 00000021
+# ---------------------------------------------
+# Time: 1545
+# debug_inst_pc: 0000028c
+# debug_wb_pc: 0000027c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: ffffffff
+# debug_data: 00000021
+# ---------------------------------------------
+# Time: 1555
+# debug_inst_pc: 00000290
+# debug_wb_pc: 00000280
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00000001
+# debug_data: 00000021
+# ---------------------------------------------
+# Time: 1565
+# debug_inst_pc: 00000294
+# debug_wb_pc: 00000284
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: ffffffff
+# debug_data: 00000021
+# ---------------------------------------------
+# Time: 1575
+# debug_inst_pc: 00000298
+# debug_wb_pc: 00000288
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: ffffffff
+# debug_data: 00000021
+# ---------------------------------------------
+# Time: 1585
+# debug_inst_pc: 0000029c
+# debug_wb_pc: 0000028c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 03
+# debug_wb_rf_wdata: 00000022
+# debug_data: 00000021
+# ---------------------------------------------
+# Time: 1595
+# debug_inst_pc: 000002a0
+# debug_wb_pc: 00000290
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 0c
+# debug_wb_rf_wdata: 0000063c
+# debug_data: 00000022
+# ---------------------------------------------
+# Time: 1605
+# debug_inst_pc: 000002a4
+# debug_wb_pc: 00000294
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00000001
+# debug_data: 00000022
+# ---------------------------------------------
+# Time: 1615
+# debug_inst_pc: 000002a8
+# debug_wb_pc: 00000298
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: ffffffff
+# debug_data: 00000022
+# ---------------------------------------------
+# Time: 1625
+# debug_inst_pc: 000002ac
+# debug_wb_pc: 0000029c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000022
+# ---------------------------------------------
+# Time: 1635
+# debug_inst_pc: 000002b0
+# debug_wb_pc: 000002a0
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000022
+# ---------------------------------------------
+# Time: 1645
+# debug_inst_pc: 000002b4
+# debug_wb_pc: 000002a4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 03
+# debug_wb_rf_wdata: 00000023
+# debug_data: 00000022
+# ---------------------------------------------
+# Time: 1655
+# debug_inst_pc: 000002b8
+# debug_wb_pc: 000002a8
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 14
+# debug_wb_rf_wdata: 0000063c
+# debug_data: 00000023
+# ---------------------------------------------
+# Time: 1665
+# debug_inst_pc: 000002bc
+# debug_wb_pc: 000002ac
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00d00000
+# debug_data: 00000023
+# ---------------------------------------------
+# Time: 1675
+# debug_inst_pc: 000002c0
+# debug_wb_pc: 000002b0
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00b00000
+# debug_data: 00000023
+# ---------------------------------------------
+# Time: 1685
+# debug_inst_pc: 000002c4
+# debug_wb_pc: 000002b4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00008f00
+# debug_data: 00000023
+# ---------------------------------------------
+# Time: 1695
+# debug_inst_pc: 000002c8
+# debug_wb_pc: 000002b8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 00009000
+# debug_data: 00000023
+# ---------------------------------------------
+# Time: 1705
+# debug_inst_pc: 000002cc
+# debug_wb_pc: 000002bc
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 00008f00
+# debug_data: 00000023
+# ---------------------------------------------
+# Time: 1715
+# debug_inst_pc: 000002d0
+# debug_wb_pc: 000002c0
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 03
+# debug_wb_rf_wdata: 00000008
+# debug_data: 00000023
+# ---------------------------------------------
+# Time: 1725
+# debug_inst_pc: 000002d4
+# debug_wb_pc: 000002c4
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 18
+# debug_wb_rf_wdata: 0000063c
+# debug_data: 00000008
+# ---------------------------------------------
+# Time: 1735
+# debug_inst_pc: 000002d8
+# debug_wb_pc: 000002c8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00e00000
+# debug_data: 00000008
+# ---------------------------------------------
+# Time: 1745
+# debug_inst_pc: 000002dc
+# debug_wb_pc: 000002cc
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00b00000
+# debug_data: 00000008
+# ---------------------------------------------
+# Time: 1755
+# debug_inst_pc: 000002e0
+# debug_wb_pc: 000002d0
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00009a00
+# debug_data: 00000008
+# ---------------------------------------------
+# Time: 1765
+# debug_inst_pc: 000002e4
+# debug_wb_pc: 000002d4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 0000a000
+# debug_data: 00000008
+# ---------------------------------------------
+# Time: 1775
+# debug_inst_pc: 000002e8
+# debug_wb_pc: 000002d8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 00009a00
+# debug_data: 00000008
+# ---------------------------------------------
+# Time: 1785
+# debug_inst_pc: 000002ec
+# debug_wb_pc: 000002dc
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 03
+# debug_wb_rf_wdata: 00000009
+# debug_data: 00000008
+# ---------------------------------------------
+# Time: 1795
+# debug_inst_pc: 000002f0
+# debug_wb_pc: 000002e0
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 1c
+# debug_wb_rf_wdata: 0000063c
+# debug_data: 00000009
+# ---------------------------------------------
+# Time: 1805
+# debug_inst_pc: 000002f4
+# debug_wb_pc: 000002e4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00d00000
+# debug_data: 00000009
+# ---------------------------------------------
+# Time: 1815
+# debug_inst_pc: 000002f8
+# debug_wb_pc: 000002e8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 0000a900
+# debug_data: 00000009
+# ---------------------------------------------
+# Time: 1825
+# debug_inst_pc: 000002fc
+# debug_wb_pc: 000002ec
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 0000b000
+# debug_data: 00000009
+# ---------------------------------------------
+# Time: 1835
+# debug_inst_pc: 00000300
+# debug_wb_pc: 000002f0
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 0000a900
+# debug_data: 00000009
+# ---------------------------------------------
+# Time: 1845
+# debug_inst_pc: 00000304
+# debug_wb_pc: 000002f4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 03
+# debug_wb_rf_wdata: 0000000a
+# debug_data: 00000009
+# ---------------------------------------------
+# Time: 1855
+# debug_inst_pc: 00000308
+# debug_wb_pc: 000002f8
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 0000063c
+# debug_data: 0000000a
+# ---------------------------------------------
+# Time: 1865
+# debug_inst_pc: 0000030c
+# debug_wb_pc: 000002fc
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000000a
+# ---------------------------------------------
+# Time: 1875
+# debug_inst_pc: 00000310
+# debug_wb_pc: 00000300
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00d00000
+# debug_data: 0000000a
+# ---------------------------------------------
+# Time: 1885
+# debug_inst_pc: 00000314
+# debug_wb_pc: 00000304
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00b00000
+# debug_data: 0000000a
+# ---------------------------------------------
+# Time: 1895
+# debug_inst_pc: 00000318
+# debug_wb_pc: 00000308
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 00008f00
+# debug_data: 0000000a
+# ---------------------------------------------
+# Time: 1905
+# debug_inst_pc: 0000031c
+# debug_wb_pc: 0000030c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 06
+# debug_wb_rf_wdata: 00008f00
+# debug_data: 0000000a
+# ---------------------------------------------
+# Time: 1915
+# debug_inst_pc: 000002fc
+# debug_wb_pc: 00000310
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000001
+# debug_data: 0000000a
+# ---------------------------------------------
+# Time: 1925
+# debug_inst_pc: 00000300
+# debug_wb_pc: 00000314
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000002
+# debug_data: 0000000a
+# ---------------------------------------------
+# Time: 1935
+# debug_inst_pc: 00000304
+# debug_wb_pc: 00000318
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 09
+# debug_wb_rf_wdata: 00000300
+# debug_data: 0000000a
+# ---------------------------------------------
+# Time: 1945
+# debug_inst_pc: 00000308
+# debug_wb_pc: 00000000
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000000a
+# ---------------------------------------------
+# Time: 1955
+# debug_inst_pc: 0000030c
+# debug_wb_pc: 00000320
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000000a
+# ---------------------------------------------
+# Time: 1965
+# debug_inst_pc: 00000310
+# debug_wb_pc: 00000300
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00d00000
+# debug_data: 0000000a
+# ---------------------------------------------
+# Time: 1975
+# debug_inst_pc: 00000314
+# debug_wb_pc: 00000304
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00b00000
+# debug_data: 0000000a
+# ---------------------------------------------
+# Time: 1985
+# debug_inst_pc: 00000318
+# debug_wb_pc: 00000308
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 00008f00
+# debug_data: 0000000a
+# ---------------------------------------------
+# Time: 1995
+# debug_inst_pc: 0000031c
+# debug_wb_pc: 0000030c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 06
+# debug_wb_rf_wdata: 00008f00
+# debug_data: 0000000a
+# ---------------------------------------------
+# Time: 2005
+# debug_inst_pc: 00000320
+# debug_wb_pc: 00000310
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000002
+# debug_data: 0000000a
+# ---------------------------------------------
+# Time: 2015
+# debug_inst_pc: 00000324
+# debug_wb_pc: 00000314
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000002
+# debug_data: 0000000a
+# ---------------------------------------------
+# Time: 2025
+# debug_inst_pc: 00000328
+# debug_wb_pc: 00000318
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 09
+# debug_wb_rf_wdata: 00000300
+# debug_data: 0000000a
+# ---------------------------------------------
+# Time: 2035
+# debug_inst_pc: 0000032c
+# debug_wb_pc: 0000031c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 00009000
+# debug_data: 0000000a
+# ---------------------------------------------
+# Time: 2045
+# debug_inst_pc: 00000330
+# debug_wb_pc: 00000320
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 00008f00
+# debug_data: 0000000a
+# ---------------------------------------------
+# Time: 2055
+# debug_inst_pc: 00000334
+# debug_wb_pc: 00000324
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 03
+# debug_wb_rf_wdata: 0000000b
+# debug_data: 0000000a
+# ---------------------------------------------
+# Time: 2065
+# debug_inst_pc: 00000338
+# debug_wb_pc: 00000328
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 14
+# debug_wb_rf_wdata: 0000063c
+# debug_data: 0000000b
+# ---------------------------------------------
+# Time: 2075
+# debug_inst_pc: 0000033c
+# debug_wb_pc: 0000032c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000000b
+# ---------------------------------------------
+# Time: 2085
+# debug_inst_pc: 00000340
+# debug_wb_pc: 00000330
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00e00000
+# debug_data: 0000000b
+# ---------------------------------------------
+# Time: 2095
+# debug_inst_pc: 00000344
+# debug_wb_pc: 00000334
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00b00000
+# debug_data: 0000000b
+# ---------------------------------------------
+# Time: 2105
+# debug_inst_pc: 00000348
+# debug_wb_pc: 00000338
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 00009a00
+# debug_data: 0000000b
+# ---------------------------------------------
+# Time: 2115
+# debug_inst_pc: 0000034c
+# debug_wb_pc: 0000033c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000000b
+# ---------------------------------------------
+# Time: 2125
+# debug_inst_pc: 00000350
+# debug_wb_pc: 00000340
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 06
+# debug_wb_rf_wdata: 00009a00
+# debug_data: 0000000b
+# ---------------------------------------------
+# Time: 2135
+# debug_inst_pc: 0000032c
+# debug_wb_pc: 00000344
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000001
+# debug_data: 0000000b
+# ---------------------------------------------
+# Time: 2145
+# debug_inst_pc: 00000330
+# debug_wb_pc: 00000348
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000002
+# debug_data: 0000000b
+# ---------------------------------------------
+# Time: 2155
+# debug_inst_pc: 00000334
+# debug_wb_pc: 0000034c
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000330
+# debug_data: 0000000b
+# ---------------------------------------------
+# Time: 2165
+# debug_inst_pc: 00000338
+# debug_wb_pc: 00000000
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000000b
+# ---------------------------------------------
+# Time: 2175
+# debug_inst_pc: 0000033c
+# debug_wb_pc: 00000354
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000000b
+# ---------------------------------------------
+# Time: 2185
+# debug_inst_pc: 00000340
+# debug_wb_pc: 00000330
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00e00000
+# debug_data: 0000000b
+# ---------------------------------------------
+# Time: 2195
+# debug_inst_pc: 00000344
+# debug_wb_pc: 00000334
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00b00000
+# debug_data: 0000000b
+# ---------------------------------------------
+# Time: 2205
+# debug_inst_pc: 00000348
+# debug_wb_pc: 00000338
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 00009a00
+# debug_data: 0000000b
+# ---------------------------------------------
+# Time: 2215
+# debug_inst_pc: 0000034c
+# debug_wb_pc: 0000033c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000000b
+# ---------------------------------------------
+# Time: 2225
+# debug_inst_pc: 00000350
+# debug_wb_pc: 00000340
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 06
+# debug_wb_rf_wdata: 00009a00
+# debug_data: 0000000b
+# ---------------------------------------------
+# Time: 2235
+# debug_inst_pc: 00000354
+# debug_wb_pc: 00000344
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000002
+# debug_data: 0000000b
+# ---------------------------------------------
+# Time: 2245
+# debug_inst_pc: 00000358
+# debug_wb_pc: 00000348
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000002
+# debug_data: 0000000b
+# ---------------------------------------------
+# Time: 2255
+# debug_inst_pc: 0000035c
+# debug_wb_pc: 0000034c
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000330
+# debug_data: 0000000b
+# ---------------------------------------------
+# Time: 2265
+# debug_inst_pc: 00000360
+# debug_wb_pc: 00000350
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 0000a000
+# debug_data: 0000000b
+# ---------------------------------------------
+# Time: 2275
+# debug_inst_pc: 00000364
+# debug_wb_pc: 00000354
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 00009a00
+# debug_data: 0000000b
+# ---------------------------------------------
+# Time: 2285
+# debug_inst_pc: 00000368
+# debug_wb_pc: 00000358
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 03
+# debug_wb_rf_wdata: 0000000c
+# debug_data: 0000000b
+# ---------------------------------------------
+# Time: 2295
+# debug_inst_pc: 0000036c
+# debug_wb_pc: 0000035c
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 0000063c
+# debug_data: 0000000c
+# ---------------------------------------------
+# Time: 2305
+# debug_inst_pc: 00000370
+# debug_wb_pc: 00000360
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000000c
+# ---------------------------------------------
+# Time: 2315
+# debug_inst_pc: 00000374
+# debug_wb_pc: 00000364
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00f00000
+# debug_data: 0000000c
+# ---------------------------------------------
+# Time: 2325
+# debug_inst_pc: 00000378
+# debug_wb_pc: 00000368
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00b00000
+# debug_data: 0000000c
+# ---------------------------------------------
+# Time: 2335
+# debug_inst_pc: 0000037c
+# debug_wb_pc: 0000036c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 0000a500
+# debug_data: 0000000c
+# ---------------------------------------------
+# Time: 2345
+# debug_inst_pc: 00000380
+# debug_wb_pc: 00000370
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000000c
+# ---------------------------------------------
+# Time: 2355
+# debug_inst_pc: 00000384
+# debug_wb_pc: 00000374
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000000c
+# ---------------------------------------------
+# Time: 2365
+# debug_inst_pc: 00000388
+# debug_wb_pc: 00000378
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 06
+# debug_wb_rf_wdata: 0000a500
+# debug_data: 0000000c
+# ---------------------------------------------
+# Time: 2375
+# debug_inst_pc: 00000360
+# debug_wb_pc: 0000037c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000001
+# debug_data: 0000000c
+# ---------------------------------------------
+# Time: 2385
+# debug_inst_pc: 00000364
+# debug_wb_pc: 00000380
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000002
+# debug_data: 0000000c
+# ---------------------------------------------
+# Time: 2395
+# debug_inst_pc: 00000368
+# debug_wb_pc: 00000384
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00000364
+# debug_data: 0000000c
+# ---------------------------------------------
+# Time: 2405
+# debug_inst_pc: 0000036c
+# debug_wb_pc: 00000000
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000000c
+# ---------------------------------------------
+# Time: 2415
+# debug_inst_pc: 00000370
+# debug_wb_pc: 0000038c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000000c
+# ---------------------------------------------
+# Time: 2425
+# debug_inst_pc: 00000374
+# debug_wb_pc: 00000364
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00f00000
+# debug_data: 0000000c
+# ---------------------------------------------
+# Time: 2435
+# debug_inst_pc: 00000378
+# debug_wb_pc: 00000368
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00b00000
+# debug_data: 0000000c
+# ---------------------------------------------
+# Time: 2445
+# debug_inst_pc: 0000037c
+# debug_wb_pc: 0000036c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 0000a500
+# debug_data: 0000000c
+# ---------------------------------------------
+# Time: 2455
+# debug_inst_pc: 00000380
+# debug_wb_pc: 00000370
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000000c
+# ---------------------------------------------
+# Time: 2465
+# debug_inst_pc: 00000384
+# debug_wb_pc: 00000374
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000000c
+# ---------------------------------------------
+# Time: 2475
+# debug_inst_pc: 00000388
+# debug_wb_pc: 00000378
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 06
+# debug_wb_rf_wdata: 0000a500
+# debug_data: 0000000c
+# ---------------------------------------------
+# Time: 2485
+# debug_inst_pc: 0000038c
+# debug_wb_pc: 0000037c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000002
+# debug_data: 0000000c
+# ---------------------------------------------
+# Time: 2495
+# debug_inst_pc: 00000390
+# debug_wb_pc: 00000380
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000002
+# debug_data: 0000000c
+# ---------------------------------------------
+# Time: 2505
+# debug_inst_pc: 00000394
+# debug_wb_pc: 00000384
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00000364
+# debug_data: 0000000c
+# ---------------------------------------------
+# Time: 2515
+# debug_inst_pc: 00000398
+# debug_wb_pc: 00000388
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 0000a000
+# debug_data: 0000000c
+# ---------------------------------------------
+# Time: 2525
+# debug_inst_pc: 0000039c
+# debug_wb_pc: 0000038c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 0000a500
+# debug_data: 0000000c
+# ---------------------------------------------
+# Time: 2535
+# debug_inst_pc: 000003a0
+# debug_wb_pc: 00000390
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 03
+# debug_wb_rf_wdata: 0000000d
+# debug_data: 0000000c
+# ---------------------------------------------
+# Time: 2545
+# debug_inst_pc: 000003a4
+# debug_wb_pc: 00000394
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 08
+# debug_wb_rf_wdata: 0000063c
+# debug_data: 0000000d
+# ---------------------------------------------
+# Time: 2555
+# debug_inst_pc: 000003a8
+# debug_wb_pc: 00000398
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000000d
+# ---------------------------------------------
+# Time: 2565
+# debug_inst_pc: 000003ac
+# debug_wb_pc: 0000039c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00d00000
+# debug_data: 0000000d
+# ---------------------------------------------
+# Time: 2575
+# debug_inst_pc: 000003b0
+# debug_wb_pc: 000003a0
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00b00000
+# debug_data: 0000000d
+# ---------------------------------------------
+# Time: 2585
+# debug_inst_pc: 000003b4
+# debug_wb_pc: 000003a4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 00008f00
+# debug_data: 0000000d
+# ---------------------------------------------
+# Time: 2595
+# debug_inst_pc: 00000398
+# debug_wb_pc: 000003a8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000001
+# debug_data: 0000000d
+# ---------------------------------------------
+# Time: 2605
+# debug_inst_pc: 0000039c
+# debug_wb_pc: 000003ac
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000002
+# debug_data: 0000000d
+# ---------------------------------------------
+# Time: 2615
+# debug_inst_pc: 000003a0
+# debug_wb_pc: 000003b0
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 0d
+# debug_wb_rf_wdata: 0000039c
+# debug_data: 0000000d
+# ---------------------------------------------
+# Time: 2625
+# debug_inst_pc: 000003a4
+# debug_wb_pc: 00000000
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000000d
+# ---------------------------------------------
+# Time: 2635
+# debug_inst_pc: 000003a8
+# debug_wb_pc: 000003b8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000000d
+# ---------------------------------------------
+# Time: 2645
+# debug_inst_pc: 000003ac
+# debug_wb_pc: 0000039c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00d00000
+# debug_data: 0000000d
+# ---------------------------------------------
+# Time: 2655
+# debug_inst_pc: 000003b0
+# debug_wb_pc: 000003a0
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00b00000
+# debug_data: 0000000d
+# ---------------------------------------------
+# Time: 2665
+# debug_inst_pc: 000003b4
+# debug_wb_pc: 000003a4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 00008f00
+# debug_data: 0000000d
+# ---------------------------------------------
+# Time: 2675
+# debug_inst_pc: 000003b8
+# debug_wb_pc: 000003a8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000002
+# debug_data: 0000000d
+# ---------------------------------------------
+# Time: 2685
+# debug_inst_pc: 000003bc
+# debug_wb_pc: 000003ac
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000002
+# debug_data: 0000000d
+# ---------------------------------------------
+# Time: 2695
+# debug_inst_pc: 000003c0
+# debug_wb_pc: 000003b0
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 0d
+# debug_wb_rf_wdata: 0000039c
+# debug_data: 0000000d
+# ---------------------------------------------
+# Time: 2705
+# debug_inst_pc: 000003c4
+# debug_wb_pc: 000003b4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 00009000
+# debug_data: 0000000d
+# ---------------------------------------------
+# Time: 2715
+# debug_inst_pc: 000003c8
+# debug_wb_pc: 000003b8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 00008f00
+# debug_data: 0000000d
+# ---------------------------------------------
+# Time: 2725
+# debug_inst_pc: 000003cc
+# debug_wb_pc: 000003bc
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 03
+# debug_wb_rf_wdata: 0000000e
+# debug_data: 0000000d
+# ---------------------------------------------
+# Time: 2735
+# debug_inst_pc: 000003d0
+# debug_wb_pc: 000003c0
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 1c
+# debug_wb_rf_wdata: 0000063c
+# debug_data: 0000000e
+# ---------------------------------------------
+# Time: 2745
+# debug_inst_pc: 000003d4
+# debug_wb_pc: 000003c4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000000e
+# ---------------------------------------------
+# Time: 2755
+# debug_inst_pc: 000003d8
+# debug_wb_pc: 000003c8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00e00000
+# debug_data: 0000000e
+# ---------------------------------------------
+# Time: 2765
+# debug_inst_pc: 000003dc
+# debug_wb_pc: 000003cc
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00b00000
+# debug_data: 0000000e
+# ---------------------------------------------
+# Time: 2775
+# debug_inst_pc: 000003e0
+# debug_wb_pc: 000003d0
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000000e
+# ---------------------------------------------
+# Time: 2785
+# debug_inst_pc: 000003e4
+# debug_wb_pc: 000003d4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 00009a00
+# debug_data: 0000000e
+# ---------------------------------------------
+# Time: 2795
+# debug_inst_pc: 000003c4
+# debug_wb_pc: 000003d8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000001
+# debug_data: 0000000e
+# ---------------------------------------------
+# Time: 2805
+# debug_inst_pc: 000003c8
+# debug_wb_pc: 000003dc
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000002
+# debug_data: 0000000e
+# ---------------------------------------------
+# Time: 2815
+# debug_inst_pc: 000003cc
+# debug_wb_pc: 000003e0
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 09
+# debug_wb_rf_wdata: 000003c8
+# debug_data: 0000000e
+# ---------------------------------------------
+# Time: 2825
+# debug_inst_pc: 000003d0
+# debug_wb_pc: 00000000
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000000e
+# ---------------------------------------------
+# Time: 2835
+# debug_inst_pc: 000003d4
+# debug_wb_pc: 000003e8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000000e
+# ---------------------------------------------
+# Time: 2845
+# debug_inst_pc: 000003d8
+# debug_wb_pc: 000003c8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00e00000
+# debug_data: 0000000e
+# ---------------------------------------------
+# Time: 2855
+# debug_inst_pc: 000003dc
+# debug_wb_pc: 000003cc
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00b00000
+# debug_data: 0000000e
+# ---------------------------------------------
+# Time: 2865
+# debug_inst_pc: 000003e0
+# debug_wb_pc: 000003d0
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000000e
+# ---------------------------------------------
+# Time: 2875
+# debug_inst_pc: 000003e4
+# debug_wb_pc: 000003d4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 00009a00
+# debug_data: 0000000e
+# ---------------------------------------------
+# Time: 2885
+# debug_inst_pc: 000003e8
+# debug_wb_pc: 000003d8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000002
+# debug_data: 0000000e
+# ---------------------------------------------
+# Time: 2895
+# debug_inst_pc: 000003ec
+# debug_wb_pc: 000003dc
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000002
+# debug_data: 0000000e
+# ---------------------------------------------
+# Time: 2905
+# debug_inst_pc: 000003f0
+# debug_wb_pc: 000003e0
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 09
+# debug_wb_rf_wdata: 000003c8
+# debug_data: 0000000e
+# ---------------------------------------------
+# Time: 2915
+# debug_inst_pc: 000003f4
+# debug_wb_pc: 000003e4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 0000a000
+# debug_data: 0000000e
+# ---------------------------------------------
+# Time: 2925
+# debug_inst_pc: 000003f8
+# debug_wb_pc: 000003e8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 00009a00
+# debug_data: 0000000e
+# ---------------------------------------------
+# Time: 2935
+# debug_inst_pc: 000003fc
+# debug_wb_pc: 000003ec
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 03
+# debug_wb_rf_wdata: 0000000f
+# debug_data: 0000000e
+# ---------------------------------------------
+# Time: 2945
+# debug_inst_pc: 00000400
+# debug_wb_pc: 000003f0
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 0c
+# debug_wb_rf_wdata: 0000063c
+# debug_data: 0000000f
+# ---------------------------------------------
+# Time: 2955
+# debug_inst_pc: 00000404
+# debug_wb_pc: 000003f4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000000f
+# ---------------------------------------------
+# Time: 2965
+# debug_inst_pc: 00000408
+# debug_wb_pc: 000003f8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00f00000
+# debug_data: 0000000f
+# ---------------------------------------------
+# Time: 2975
+# debug_inst_pc: 0000040c
+# debug_wb_pc: 000003fc
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00b00000
+# debug_data: 0000000f
+# ---------------------------------------------
+# Time: 2985
+# debug_inst_pc: 00000410
+# debug_wb_pc: 00000400
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000000f
+# ---------------------------------------------
+# Time: 2995
+# debug_inst_pc: 00000414
+# debug_wb_pc: 00000404
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000000f
+# ---------------------------------------------
+# Time: 3005
+# debug_inst_pc: 00000418
+# debug_wb_pc: 00000408
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 0000a500
+# debug_data: 0000000f
+# ---------------------------------------------
+# Time: 3015
+# debug_inst_pc: 000003f4
+# debug_wb_pc: 0000040c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000001
+# debug_data: 0000000f
+# ---------------------------------------------
+# Time: 3025
+# debug_inst_pc: 000003f8
+# debug_wb_pc: 00000410
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000002
+# debug_data: 0000000f
+# ---------------------------------------------
+# Time: 3035
+# debug_inst_pc: 000003fc
+# debug_wb_pc: 00000414
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 000003f8
+# debug_data: 0000000f
+# ---------------------------------------------
+# Time: 3045
+# debug_inst_pc: 00000400
+# debug_wb_pc: 00000000
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000000f
+# ---------------------------------------------
+# Time: 3055
+# debug_inst_pc: 00000404
+# debug_wb_pc: 0000041c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000000f
+# ---------------------------------------------
+# Time: 3065
+# debug_inst_pc: 00000408
+# debug_wb_pc: 000003f8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00f00000
+# debug_data: 0000000f
+# ---------------------------------------------
+# Time: 3075
+# debug_inst_pc: 0000040c
+# debug_wb_pc: 000003fc
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00b00000
+# debug_data: 0000000f
+# ---------------------------------------------
+# Time: 3085
+# debug_inst_pc: 00000410
+# debug_wb_pc: 00000400
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000000f
+# ---------------------------------------------
+# Time: 3095
+# debug_inst_pc: 00000414
+# debug_wb_pc: 00000404
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000000f
+# ---------------------------------------------
+# Time: 3105
+# debug_inst_pc: 00000418
+# debug_wb_pc: 00000408
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 0000a500
+# debug_data: 0000000f
+# ---------------------------------------------
+# Time: 3115
+# debug_inst_pc: 0000041c
+# debug_wb_pc: 0000040c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000002
+# debug_data: 0000000f
+# ---------------------------------------------
+# Time: 3125
+# debug_inst_pc: 00000420
+# debug_wb_pc: 00000410
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000002
+# debug_data: 0000000f
+# ---------------------------------------------
+# Time: 3135
+# debug_inst_pc: 00000424
+# debug_wb_pc: 00000414
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 000003f8
+# debug_data: 0000000f
+# ---------------------------------------------
+# Time: 3145
+# debug_inst_pc: 00000428
+# debug_wb_pc: 00000418
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 0000a000
+# debug_data: 0000000f
+# ---------------------------------------------
+# Time: 3155
+# debug_inst_pc: 0000042c
+# debug_wb_pc: 0000041c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 0000a500
+# debug_data: 0000000f
+# ---------------------------------------------
+# Time: 3165
+# debug_inst_pc: 00000430
+# debug_wb_pc: 00000420
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 03
+# debug_wb_rf_wdata: 00000010
+# debug_data: 0000000f
+# ---------------------------------------------
+# Time: 3175
+# debug_inst_pc: 00000434
+# debug_wb_pc: 00000424
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 18
+# debug_wb_rf_wdata: 0000063c
+# debug_data: 00000010
+# ---------------------------------------------
+# Time: 3185
+# debug_inst_pc: 00000438
+# debug_wb_pc: 00000428
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000010
+# ---------------------------------------------
+# Time: 3195
+# debug_inst_pc: 0000043c
+# debug_wb_pc: 0000042c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00d00000
+# debug_data: 00000010
+# ---------------------------------------------
+# Time: 3205
+# debug_inst_pc: 00000440
+# debug_wb_pc: 00000430
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000010
+# ---------------------------------------------
+# Time: 3215
+# debug_inst_pc: 00000444
+# debug_wb_pc: 00000434
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00b00000
+# debug_data: 00000010
+# ---------------------------------------------
+# Time: 3225
+# debug_inst_pc: 00000448
+# debug_wb_pc: 00000438
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 00008f00
+# debug_data: 00000010
+# ---------------------------------------------
+# Time: 3235
+# debug_inst_pc: 00000428
+# debug_wb_pc: 0000043c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000001
+# debug_data: 00000010
+# ---------------------------------------------
+# Time: 3245
+# debug_inst_pc: 0000042c
+# debug_wb_pc: 00000440
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000002
+# debug_data: 00000010
+# ---------------------------------------------
+# Time: 3255
+# debug_inst_pc: 00000430
+# debug_wb_pc: 00000444
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 09
+# debug_wb_rf_wdata: 0000042c
+# debug_data: 00000010
+# ---------------------------------------------
+# Time: 3265
+# debug_inst_pc: 00000434
+# debug_wb_pc: 00000000
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000010
+# ---------------------------------------------
+# Time: 3275
+# debug_inst_pc: 00000438
+# debug_wb_pc: 0000044c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000010
+# ---------------------------------------------
+# Time: 3285
+# debug_inst_pc: 0000043c
+# debug_wb_pc: 0000042c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00d00000
+# debug_data: 00000010
+# ---------------------------------------------
+# Time: 3295
+# debug_inst_pc: 00000440
+# debug_wb_pc: 00000430
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000010
+# ---------------------------------------------
+# Time: 3305
+# debug_inst_pc: 00000444
+# debug_wb_pc: 00000434
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00b00000
+# debug_data: 00000010
+# ---------------------------------------------
+# Time: 3315
+# debug_inst_pc: 00000448
+# debug_wb_pc: 00000438
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 00008f00
+# debug_data: 00000010
+# ---------------------------------------------
+# Time: 3325
+# debug_inst_pc: 0000044c
+# debug_wb_pc: 0000043c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000002
+# debug_data: 00000010
+# ---------------------------------------------
+# Time: 3335
+# debug_inst_pc: 00000450
+# debug_wb_pc: 00000440
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000002
+# debug_data: 00000010
+# ---------------------------------------------
+# Time: 3345
+# debug_inst_pc: 00000454
+# debug_wb_pc: 00000444
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 09
+# debug_wb_rf_wdata: 0000042c
+# debug_data: 00000010
+# ---------------------------------------------
+# Time: 3355
+# debug_inst_pc: 00000458
+# debug_wb_pc: 00000448
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 00009000
+# debug_data: 00000010
+# ---------------------------------------------
+# Time: 3365
+# debug_inst_pc: 0000045c
+# debug_wb_pc: 0000044c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 00008f00
+# debug_data: 00000010
+# ---------------------------------------------
+# Time: 3375
+# debug_inst_pc: 00000460
+# debug_wb_pc: 00000450
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 03
+# debug_wb_rf_wdata: 00000011
+# debug_data: 00000010
+# ---------------------------------------------
+# Time: 3385
+# debug_inst_pc: 00000464
+# debug_wb_pc: 00000454
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 08
+# debug_wb_rf_wdata: 0000063c
+# debug_data: 00000011
+# ---------------------------------------------
+# Time: 3395
+# debug_inst_pc: 00000468
+# debug_wb_pc: 00000458
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000011
+# ---------------------------------------------
+# Time: 3405
+# debug_inst_pc: 0000046c
+# debug_wb_pc: 0000045c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00e00000
+# debug_data: 00000011
+# ---------------------------------------------
+# Time: 3415
+# debug_inst_pc: 00000470
+# debug_wb_pc: 00000460
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000011
+# ---------------------------------------------
+# Time: 3425
+# debug_inst_pc: 00000474
+# debug_wb_pc: 00000464
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00b00000
+# debug_data: 00000011
+# ---------------------------------------------
+# Time: 3435
+# debug_inst_pc: 00000478
+# debug_wb_pc: 00000468
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000011
+# ---------------------------------------------
+# Time: 3445
+# debug_inst_pc: 0000047c
+# debug_wb_pc: 0000046c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 00009a00
+# debug_data: 00000011
+# ---------------------------------------------
+# Time: 3455
+# debug_inst_pc: 00000458
+# debug_wb_pc: 00000470
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000001
+# debug_data: 00000011
+# ---------------------------------------------
+# Time: 3465
+# debug_inst_pc: 0000045c
+# debug_wb_pc: 00000474
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000002
+# debug_data: 00000011
+# ---------------------------------------------
+# Time: 3475
+# debug_inst_pc: 00000460
+# debug_wb_pc: 00000478
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 0000045c
+# debug_data: 00000011
+# ---------------------------------------------
+# Time: 3485
+# debug_inst_pc: 00000464
+# debug_wb_pc: 00000000
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000011
+# ---------------------------------------------
+# Time: 3495
+# debug_inst_pc: 00000468
+# debug_wb_pc: 00000480
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000011
+# ---------------------------------------------
+# Time: 3505
+# debug_inst_pc: 0000046c
+# debug_wb_pc: 0000045c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00e00000
+# debug_data: 00000011
+# ---------------------------------------------
+# Time: 3515
+# debug_inst_pc: 00000470
+# debug_wb_pc: 00000460
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000011
+# ---------------------------------------------
+# Time: 3525
+# debug_inst_pc: 00000474
+# debug_wb_pc: 00000464
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00b00000
+# debug_data: 00000011
+# ---------------------------------------------
+# Time: 3535
+# debug_inst_pc: 00000478
+# debug_wb_pc: 00000468
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000011
+# ---------------------------------------------
+# Time: 3545
+# debug_inst_pc: 0000047c
+# debug_wb_pc: 0000046c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 00009a00
+# debug_data: 00000011
+# ---------------------------------------------
+# Time: 3555
+# debug_inst_pc: 00000480
+# debug_wb_pc: 00000470
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000002
+# debug_data: 00000011
+# ---------------------------------------------
+# Time: 3565
+# debug_inst_pc: 00000484
+# debug_wb_pc: 00000474
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000002
+# debug_data: 00000011
+# ---------------------------------------------
+# Time: 3575
+# debug_inst_pc: 00000488
+# debug_wb_pc: 00000478
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 0000045c
+# debug_data: 00000011
+# ---------------------------------------------
+# Time: 3585
+# debug_inst_pc: 0000048c
+# debug_wb_pc: 0000047c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 0000a000
+# debug_data: 00000011
+# ---------------------------------------------
+# Time: 3595
+# debug_inst_pc: 00000490
+# debug_wb_pc: 00000480
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 00009a00
+# debug_data: 00000011
+# ---------------------------------------------
+# Time: 3605
+# debug_inst_pc: 00000494
+# debug_wb_pc: 00000484
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 03
+# debug_wb_rf_wdata: 00000012
+# debug_data: 00000011
+# ---------------------------------------------
+# Time: 3615
+# debug_inst_pc: 00000498
+# debug_wb_pc: 00000488
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 14
+# debug_wb_rf_wdata: 0000063c
+# debug_data: 00000012
+# ---------------------------------------------
+# Time: 3625
+# debug_inst_pc: 0000049c
+# debug_wb_pc: 0000048c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000012
+# ---------------------------------------------
+# Time: 3635
+# debug_inst_pc: 000004a0
+# debug_wb_pc: 00000490
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00f00000
+# debug_data: 00000012
+# ---------------------------------------------
+# Time: 3645
+# debug_inst_pc: 000004a4
+# debug_wb_pc: 00000494
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000012
+# ---------------------------------------------
+# Time: 3655
+# debug_inst_pc: 000004a8
+# debug_wb_pc: 00000498
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000012
+# ---------------------------------------------
+# Time: 3665
+# debug_inst_pc: 000004ac
+# debug_wb_pc: 0000049c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00b00000
+# debug_data: 00000012
+# ---------------------------------------------
+# Time: 3675
+# debug_inst_pc: 000004b0
+# debug_wb_pc: 000004a0
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 0000a500
+# debug_data: 00000012
+# ---------------------------------------------
+# Time: 3685
+# debug_inst_pc: 0000048c
+# debug_wb_pc: 000004a4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000001
+# debug_data: 00000012
+# ---------------------------------------------
+# Time: 3695
+# debug_inst_pc: 00000490
+# debug_wb_pc: 000004a8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000002
+# debug_data: 00000012
+# ---------------------------------------------
+# Time: 3705
+# debug_inst_pc: 00000494
+# debug_wb_pc: 000004ac
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000490
+# debug_data: 00000012
+# ---------------------------------------------
+# Time: 3715
+# debug_inst_pc: 00000498
+# debug_wb_pc: 00000000
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000012
+# ---------------------------------------------
+# Time: 3725
+# debug_inst_pc: 0000049c
+# debug_wb_pc: 000004b4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000012
+# ---------------------------------------------
+# Time: 3735
+# debug_inst_pc: 000004a0
+# debug_wb_pc: 00000490
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00f00000
+# debug_data: 00000012
+# ---------------------------------------------
+# Time: 3745
+# debug_inst_pc: 000004a4
+# debug_wb_pc: 00000494
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000012
+# ---------------------------------------------
+# Time: 3755
+# debug_inst_pc: 000004a8
+# debug_wb_pc: 00000498
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000012
+# ---------------------------------------------
+# Time: 3765
+# debug_inst_pc: 000004ac
+# debug_wb_pc: 0000049c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00b00000
+# debug_data: 00000012
+# ---------------------------------------------
+# Time: 3775
+# debug_inst_pc: 000004b0
+# debug_wb_pc: 000004a0
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 0000a500
+# debug_data: 00000012
+# ---------------------------------------------
+# Time: 3785
+# debug_inst_pc: 000004b4
+# debug_wb_pc: 000004a4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000002
+# debug_data: 00000012
+# ---------------------------------------------
+# Time: 3795
+# debug_inst_pc: 000004b8
+# debug_wb_pc: 000004a8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000002
+# debug_data: 00000012
+# ---------------------------------------------
+# Time: 3805
+# debug_inst_pc: 000004bc
+# debug_wb_pc: 000004ac
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000490
+# debug_data: 00000012
+# ---------------------------------------------
+# Time: 3815
+# debug_inst_pc: 000004c0
+# debug_wb_pc: 000004b0
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 0000a000
+# debug_data: 00000012
+# ---------------------------------------------
+# Time: 3825
+# debug_inst_pc: 000004c4
+# debug_wb_pc: 000004b4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 0000a500
+# debug_data: 00000012
+# ---------------------------------------------
+# Time: 3835
+# debug_inst_pc: 000004c8
+# debug_wb_pc: 000004b8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 03
+# debug_wb_rf_wdata: 00000013
+# debug_data: 00000012
+# ---------------------------------------------
+# Time: 3845
+# debug_inst_pc: 000004cc
+# debug_wb_pc: 000004bc
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 0000063c
+# debug_data: 00000013
+# ---------------------------------------------
+# Time: 3855
+# debug_inst_pc: 000004d0
+# debug_wb_pc: 000004c0
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000013
+# ---------------------------------------------
+# Time: 3865
+# debug_inst_pc: 000004d4
+# debug_wb_pc: 000004c4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00b00000
+# debug_data: 00000013
+# ---------------------------------------------
+# Time: 3875
+# debug_inst_pc: 000004d8
+# debug_wb_pc: 000004c8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00d00000
+# debug_data: 00000013
+# ---------------------------------------------
+# Time: 3885
+# debug_inst_pc: 000004dc
+# debug_wb_pc: 000004cc
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 00008f00
+# debug_data: 00000013
+# ---------------------------------------------
+# Time: 3895
+# debug_inst_pc: 000004c0
+# debug_wb_pc: 000004d0
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000001
+# debug_data: 00000013
+# ---------------------------------------------
+# Time: 3905
+# debug_inst_pc: 000004c4
+# debug_wb_pc: 000004d4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000002
+# debug_data: 00000013
+# ---------------------------------------------
+# Time: 3915
+# debug_inst_pc: 000004c8
+# debug_wb_pc: 000004d8
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 0d
+# debug_wb_rf_wdata: 000004c4
+# debug_data: 00000013
+# ---------------------------------------------
+# Time: 3925
+# debug_inst_pc: 000004cc
+# debug_wb_pc: 00000000
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000013
+# ---------------------------------------------
+# Time: 3935
+# debug_inst_pc: 000004d0
+# debug_wb_pc: 000004e0
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000013
+# ---------------------------------------------
+# Time: 3945
+# debug_inst_pc: 000004d4
+# debug_wb_pc: 000004c4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00b00000
+# debug_data: 00000013
+# ---------------------------------------------
+# Time: 3955
+# debug_inst_pc: 000004d8
+# debug_wb_pc: 000004c8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00d00000
+# debug_data: 00000013
+# ---------------------------------------------
+# Time: 3965
+# debug_inst_pc: 000004dc
+# debug_wb_pc: 000004cc
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 00008f00
+# debug_data: 00000013
+# ---------------------------------------------
+# Time: 3975
+# debug_inst_pc: 000004e0
+# debug_wb_pc: 000004d0
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000002
+# debug_data: 00000013
+# ---------------------------------------------
+# Time: 3985
+# debug_inst_pc: 000004e4
+# debug_wb_pc: 000004d4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000002
+# debug_data: 00000013
+# ---------------------------------------------
+# Time: 3995
+# debug_inst_pc: 000004e8
+# debug_wb_pc: 000004d8
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 0d
+# debug_wb_rf_wdata: 000004c4
+# debug_data: 00000013
+# ---------------------------------------------
+# Time: 4005
+# debug_inst_pc: 000004ec
+# debug_wb_pc: 000004dc
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 00009000
+# debug_data: 00000013
+# ---------------------------------------------
+# Time: 4015
+# debug_inst_pc: 000004f0
+# debug_wb_pc: 000004e0
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 00008f00
+# debug_data: 00000013
+# ---------------------------------------------
+# Time: 4025
+# debug_inst_pc: 000004f4
+# debug_wb_pc: 000004e4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 03
+# debug_wb_rf_wdata: 00000014
+# debug_data: 00000013
+# ---------------------------------------------
+# Time: 4035
+# debug_inst_pc: 000004f8
+# debug_wb_pc: 000004e8
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 14
+# debug_wb_rf_wdata: 0000063c
+# debug_data: 00000014
+# ---------------------------------------------
+# Time: 4045
+# debug_inst_pc: 000004fc
+# debug_wb_pc: 000004ec
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000014
+# ---------------------------------------------
+# Time: 4055
+# debug_inst_pc: 00000500
+# debug_wb_pc: 000004f0
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00b00000
+# debug_data: 00000014
+# ---------------------------------------------
+# Time: 4065
+# debug_inst_pc: 00000504
+# debug_wb_pc: 000004f4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00e00000
+# debug_data: 00000014
+# ---------------------------------------------
+# Time: 4075
+# debug_inst_pc: 00000508
+# debug_wb_pc: 000004f8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000014
+# ---------------------------------------------
+# Time: 4085
+# debug_inst_pc: 0000050c
+# debug_wb_pc: 000004fc
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 00009a00
+# debug_data: 00000014
+# ---------------------------------------------
+# Time: 4095
+# debug_inst_pc: 000004ec
+# debug_wb_pc: 00000500
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000001
+# debug_data: 00000014
+# ---------------------------------------------
+# Time: 4105
+# debug_inst_pc: 000004f0
+# debug_wb_pc: 00000504
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000002
+# debug_data: 00000014
+# ---------------------------------------------
+# Time: 4115
+# debug_inst_pc: 000004f4
+# debug_wb_pc: 00000508
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 09
+# debug_wb_rf_wdata: 000004f0
+# debug_data: 00000014
+# ---------------------------------------------
+# Time: 4125
+# debug_inst_pc: 000004f8
+# debug_wb_pc: 00000000
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000014
+# ---------------------------------------------
+# Time: 4135
+# debug_inst_pc: 000004fc
+# debug_wb_pc: 00000510
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000014
+# ---------------------------------------------
+# Time: 4145
+# debug_inst_pc: 00000500
+# debug_wb_pc: 000004f0
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00b00000
+# debug_data: 00000014
+# ---------------------------------------------
+# Time: 4155
+# debug_inst_pc: 00000504
+# debug_wb_pc: 000004f4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00e00000
+# debug_data: 00000014
+# ---------------------------------------------
+# Time: 4165
+# debug_inst_pc: 00000508
+# debug_wb_pc: 000004f8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000014
+# ---------------------------------------------
+# Time: 4175
+# debug_inst_pc: 0000050c
+# debug_wb_pc: 000004fc
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 00009a00
+# debug_data: 00000014
+# ---------------------------------------------
+# Time: 4185
+# debug_inst_pc: 00000510
+# debug_wb_pc: 00000500
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000002
+# debug_data: 00000014
+# ---------------------------------------------
+# Time: 4195
+# debug_inst_pc: 00000514
+# debug_wb_pc: 00000504
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000002
+# debug_data: 00000014
+# ---------------------------------------------
+# Time: 4205
+# debug_inst_pc: 00000518
+# debug_wb_pc: 00000508
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 09
+# debug_wb_rf_wdata: 000004f0
+# debug_data: 00000014
+# ---------------------------------------------
+# Time: 4215
+# debug_inst_pc: 0000051c
+# debug_wb_pc: 0000050c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 0000a000
+# debug_data: 00000014
+# ---------------------------------------------
+# Time: 4225
+# debug_inst_pc: 00000520
+# debug_wb_pc: 00000510
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 00009a00
+# debug_data: 00000014
+# ---------------------------------------------
+# Time: 4235
+# debug_inst_pc: 00000524
+# debug_wb_pc: 00000514
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 03
+# debug_wb_rf_wdata: 00000015
+# debug_data: 00000014
+# ---------------------------------------------
+# Time: 4245
+# debug_inst_pc: 00000528
+# debug_wb_pc: 00000518
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 0000063c
+# debug_data: 00000015
+# ---------------------------------------------
+# Time: 4255
+# debug_inst_pc: 0000052c
+# debug_wb_pc: 0000051c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000015
+# ---------------------------------------------
+# Time: 4265
+# debug_inst_pc: 00000530
+# debug_wb_pc: 00000520
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00b00000
+# debug_data: 00000015
+# ---------------------------------------------
+# Time: 4275
+# debug_inst_pc: 00000534
+# debug_wb_pc: 00000524
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00f00000
+# debug_data: 00000015
+# ---------------------------------------------
+# Time: 4285
+# debug_inst_pc: 00000538
+# debug_wb_pc: 00000528
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000015
+# ---------------------------------------------
+# Time: 4295
+# debug_inst_pc: 0000053c
+# debug_wb_pc: 0000052c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000015
+# ---------------------------------------------
+# Time: 4305
+# debug_inst_pc: 00000540
+# debug_wb_pc: 00000530
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 0000a500
+# debug_data: 00000015
+# ---------------------------------------------
+# Time: 4315
+# debug_inst_pc: 0000051c
+# debug_wb_pc: 00000534
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000001
+# debug_data: 00000015
+# ---------------------------------------------
+# Time: 4325
+# debug_inst_pc: 00000520
+# debug_wb_pc: 00000538
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000002
+# debug_data: 00000015
+# ---------------------------------------------
+# Time: 4335
+# debug_inst_pc: 00000524
+# debug_wb_pc: 0000053c
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000520
+# debug_data: 00000015
+# ---------------------------------------------
+# Time: 4345
+# debug_inst_pc: 00000528
+# debug_wb_pc: 00000000
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000015
+# ---------------------------------------------
+# Time: 4355
+# debug_inst_pc: 0000052c
+# debug_wb_pc: 00000544
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000015
+# ---------------------------------------------
+# Time: 4365
+# debug_inst_pc: 00000530
+# debug_wb_pc: 00000520
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00b00000
+# debug_data: 00000015
+# ---------------------------------------------
+# Time: 4375
+# debug_inst_pc: 00000534
+# debug_wb_pc: 00000524
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00f00000
+# debug_data: 00000015
+# ---------------------------------------------
+# Time: 4385
+# debug_inst_pc: 00000538
+# debug_wb_pc: 00000528
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000015
+# ---------------------------------------------
+# Time: 4395
+# debug_inst_pc: 0000053c
+# debug_wb_pc: 0000052c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000015
+# ---------------------------------------------
+# Time: 4405
+# debug_inst_pc: 00000540
+# debug_wb_pc: 00000530
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 0000a500
+# debug_data: 00000015
+# ---------------------------------------------
+# Time: 4415
+# debug_inst_pc: 00000544
+# debug_wb_pc: 00000534
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000002
+# debug_data: 00000015
+# ---------------------------------------------
+# Time: 4425
+# debug_inst_pc: 00000548
+# debug_wb_pc: 00000538
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000002
+# debug_data: 00000015
+# ---------------------------------------------
+# Time: 4435
+# debug_inst_pc: 0000054c
+# debug_wb_pc: 0000053c
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000520
+# debug_data: 00000015
+# ---------------------------------------------
+# Time: 4445
+# debug_inst_pc: 00000550
+# debug_wb_pc: 00000540
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 0000a000
+# debug_data: 00000015
+# ---------------------------------------------
+# Time: 4455
+# debug_inst_pc: 00000554
+# debug_wb_pc: 00000544
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 0000a500
+# debug_data: 00000015
+# ---------------------------------------------
+# Time: 4465
+# debug_inst_pc: 00000558
+# debug_wb_pc: 00000548
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 03
+# debug_wb_rf_wdata: 00000016
+# debug_data: 00000015
+# ---------------------------------------------
+# Time: 4475
+# debug_inst_pc: 0000055c
+# debug_wb_pc: 0000054c
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 10
+# debug_wb_rf_wdata: 0000063c
+# debug_data: 00000016
+# ---------------------------------------------
+# Time: 4485
+# debug_inst_pc: 00000560
+# debug_wb_pc: 00000550
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000016
+# ---------------------------------------------
+# Time: 4495
+# debug_inst_pc: 00000564
+# debug_wb_pc: 00000554
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00b00000
+# debug_data: 00000016
+# ---------------------------------------------
+# Time: 4505
+# debug_inst_pc: 00000568
+# debug_wb_pc: 00000558
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000016
+# ---------------------------------------------
+# Time: 4515
+# debug_inst_pc: 0000056c
+# debug_wb_pc: 0000055c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00d00000
+# debug_data: 00000016
+# ---------------------------------------------
+# Time: 4525
+# debug_inst_pc: 00000570
+# debug_wb_pc: 00000560
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 00008f00
+# debug_data: 00000016
+# ---------------------------------------------
+# Time: 4535
+# debug_inst_pc: 00000550
+# debug_wb_pc: 00000564
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000001
+# debug_data: 00000016
+# ---------------------------------------------
+# Time: 4545
+# debug_inst_pc: 00000554
+# debug_wb_pc: 00000568
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000002
+# debug_data: 00000016
+# ---------------------------------------------
+# Time: 4555
+# debug_inst_pc: 00000558
+# debug_wb_pc: 0000056c
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 09
+# debug_wb_rf_wdata: 00000554
+# debug_data: 00000016
+# ---------------------------------------------
+# Time: 4565
+# debug_inst_pc: 0000055c
+# debug_wb_pc: 00000000
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000016
+# ---------------------------------------------
+# Time: 4575
+# debug_inst_pc: 00000560
+# debug_wb_pc: 00000574
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000016
+# ---------------------------------------------
+# Time: 4585
+# debug_inst_pc: 00000564
+# debug_wb_pc: 00000554
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00b00000
+# debug_data: 00000016
+# ---------------------------------------------
+# Time: 4595
+# debug_inst_pc: 00000568
+# debug_wb_pc: 00000558
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000016
+# ---------------------------------------------
+# Time: 4605
+# debug_inst_pc: 0000056c
+# debug_wb_pc: 0000055c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00d00000
+# debug_data: 00000016
+# ---------------------------------------------
+# Time: 4615
+# debug_inst_pc: 00000570
+# debug_wb_pc: 00000560
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 00008f00
+# debug_data: 00000016
+# ---------------------------------------------
+# Time: 4625
+# debug_inst_pc: 00000574
+# debug_wb_pc: 00000564
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000002
+# debug_data: 00000016
+# ---------------------------------------------
+# Time: 4635
+# debug_inst_pc: 00000578
+# debug_wb_pc: 00000568
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000002
+# debug_data: 00000016
+# ---------------------------------------------
+# Time: 4645
+# debug_inst_pc: 0000057c
+# debug_wb_pc: 0000056c
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 09
+# debug_wb_rf_wdata: 00000554
+# debug_data: 00000016
+# ---------------------------------------------
+# Time: 4655
+# debug_inst_pc: 00000580
+# debug_wb_pc: 00000570
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 00009000
+# debug_data: 00000016
+# ---------------------------------------------
+# Time: 4665
+# debug_inst_pc: 00000584
+# debug_wb_pc: 00000574
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 00008f00
+# debug_data: 00000016
+# ---------------------------------------------
+# Time: 4675
+# debug_inst_pc: 00000588
+# debug_wb_pc: 00000578
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 03
+# debug_wb_rf_wdata: 00000017
+# debug_data: 00000016
+# ---------------------------------------------
+# Time: 4685
+# debug_inst_pc: 0000058c
+# debug_wb_pc: 0000057c
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 0000063c
+# debug_data: 00000017
+# ---------------------------------------------
+# Time: 4695
+# debug_inst_pc: 00000590
+# debug_wb_pc: 00000580
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000017
+# ---------------------------------------------
+# Time: 4705
+# debug_inst_pc: 00000594
+# debug_wb_pc: 00000584
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00b00000
+# debug_data: 00000017
+# ---------------------------------------------
+# Time: 4715
+# debug_inst_pc: 00000598
+# debug_wb_pc: 00000588
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000017
+# ---------------------------------------------
+# Time: 4725
+# debug_inst_pc: 0000059c
+# debug_wb_pc: 0000058c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00e00000
+# debug_data: 00000017
+# ---------------------------------------------
+# Time: 4735
+# debug_inst_pc: 000005a0
+# debug_wb_pc: 00000590
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000017
+# ---------------------------------------------
+# Time: 4745
+# debug_inst_pc: 000005a4
+# debug_wb_pc: 00000594
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 00009a00
+# debug_data: 00000017
+# ---------------------------------------------
+# Time: 4755
+# debug_inst_pc: 00000580
+# debug_wb_pc: 00000598
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000001
+# debug_data: 00000017
+# ---------------------------------------------
+# Time: 4765
+# debug_inst_pc: 00000584
+# debug_wb_pc: 0000059c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000002
+# debug_data: 00000017
+# ---------------------------------------------
+# Time: 4775
+# debug_inst_pc: 00000588
+# debug_wb_pc: 000005a0
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000584
+# debug_data: 00000017
+# ---------------------------------------------
+# Time: 4785
+# debug_inst_pc: 0000058c
+# debug_wb_pc: 00000000
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000017
+# ---------------------------------------------
+# Time: 4795
+# debug_inst_pc: 00000590
+# debug_wb_pc: 000005a8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000017
+# ---------------------------------------------
+# Time: 4805
+# debug_inst_pc: 00000594
+# debug_wb_pc: 00000584
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00b00000
+# debug_data: 00000017
+# ---------------------------------------------
+# Time: 4815
+# debug_inst_pc: 00000598
+# debug_wb_pc: 00000588
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000017
+# ---------------------------------------------
+# Time: 4825
+# debug_inst_pc: 0000059c
+# debug_wb_pc: 0000058c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00e00000
+# debug_data: 00000017
+# ---------------------------------------------
+# Time: 4835
+# debug_inst_pc: 000005a0
+# debug_wb_pc: 00000590
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000017
+# ---------------------------------------------
+# Time: 4845
+# debug_inst_pc: 000005a4
+# debug_wb_pc: 00000594
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 00009a00
+# debug_data: 00000017
+# ---------------------------------------------
+# Time: 4855
+# debug_inst_pc: 000005a8
+# debug_wb_pc: 00000598
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000002
+# debug_data: 00000017
+# ---------------------------------------------
+# Time: 4865
+# debug_inst_pc: 000005ac
+# debug_wb_pc: 0000059c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000002
+# debug_data: 00000017
+# ---------------------------------------------
+# Time: 4875
+# debug_inst_pc: 000005b0
+# debug_wb_pc: 000005a0
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000584
+# debug_data: 00000017
+# ---------------------------------------------
+# Time: 4885
+# debug_inst_pc: 000005b4
+# debug_wb_pc: 000005a4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 0000a000
+# debug_data: 00000017
+# ---------------------------------------------
+# Time: 4895
+# debug_inst_pc: 000005b8
+# debug_wb_pc: 000005a8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 00009a00
+# debug_data: 00000017
+# ---------------------------------------------
+# Time: 4905
+# debug_inst_pc: 000005bc
+# debug_wb_pc: 000005ac
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 03
+# debug_wb_rf_wdata: 00000018
+# debug_data: 00000017
+# ---------------------------------------------
+# Time: 4915
+# debug_inst_pc: 000005c0
+# debug_wb_pc: 000005b0
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 0c
+# debug_wb_rf_wdata: 0000063c
+# debug_data: 00000018
+# ---------------------------------------------
+# Time: 4925
+# debug_inst_pc: 000005c4
+# debug_wb_pc: 000005b4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000018
+# ---------------------------------------------
+# Time: 4935
+# debug_inst_pc: 000005c8
+# debug_wb_pc: 000005b8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00b00000
+# debug_data: 00000018
+# ---------------------------------------------
+# Time: 4945
+# debug_inst_pc: 000005cc
+# debug_wb_pc: 000005bc
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000018
+# ---------------------------------------------
+# Time: 4955
+# debug_inst_pc: 000005d0
+# debug_wb_pc: 000005c0
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000018
+# ---------------------------------------------
+# Time: 4965
+# debug_inst_pc: 000005d4
+# debug_wb_pc: 000005c4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00f00000
+# debug_data: 00000018
+# ---------------------------------------------
+# Time: 4975
+# debug_inst_pc: 000005d8
+# debug_wb_pc: 000005c8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 0000a500
+# debug_data: 00000018
+# ---------------------------------------------
+# Time: 4985
+# debug_inst_pc: 000005b4
+# debug_wb_pc: 000005cc
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000001
+# debug_data: 00000018
+# ---------------------------------------------
+# Time: 4995
+# debug_inst_pc: 000005b8
+# debug_wb_pc: 000005d0
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000002
+# debug_data: 00000018
+# ---------------------------------------------
+# Time: 5005
+# debug_inst_pc: 000005bc
+# debug_wb_pc: 000005d4
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 000005b8
+# debug_data: 00000018
+# ---------------------------------------------
+# Time: 5015
+# debug_inst_pc: 000005c0
+# debug_wb_pc: 00000000
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000018
+# ---------------------------------------------
+# Time: 5025
+# debug_inst_pc: 000005c4
+# debug_wb_pc: 000005dc
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000018
+# ---------------------------------------------
+# Time: 5035
+# debug_inst_pc: 000005c8
+# debug_wb_pc: 000005b8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00b00000
+# debug_data: 00000018
+# ---------------------------------------------
+# Time: 5045
+# debug_inst_pc: 000005cc
+# debug_wb_pc: 000005bc
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000018
+# ---------------------------------------------
+# Time: 5055
+# debug_inst_pc: 000005d0
+# debug_wb_pc: 000005c0
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000018
+# ---------------------------------------------
+# Time: 5065
+# debug_inst_pc: 000005d4
+# debug_wb_pc: 000005c4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00f00000
+# debug_data: 00000018
+# ---------------------------------------------
+# Time: 5075
+# debug_inst_pc: 000005d8
+# debug_wb_pc: 000005c8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0e
+# debug_wb_rf_wdata: 0000a500
+# debug_data: 00000018
+# ---------------------------------------------
+# Time: 5085
+# debug_inst_pc: 000005dc
+# debug_wb_pc: 000005cc
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00000002
+# debug_data: 00000018
+# ---------------------------------------------
+# Time: 5095
+# debug_inst_pc: 000005e0
+# debug_wb_pc: 000005d0
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 00000002
+# debug_data: 00000018
+# ---------------------------------------------
+# Time: 5105
+# debug_inst_pc: 000005e4
+# debug_wb_pc: 000005d4
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 05
+# debug_wb_rf_wdata: 000005b8
+# debug_data: 00000018
+# ---------------------------------------------
+# Time: 5115
+# debug_inst_pc: 000005e8
+# debug_wb_pc: 000005d8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 0000a000
+# debug_data: 00000018
+# ---------------------------------------------
+# Time: 5125
+# debug_inst_pc: 000005ec
+# debug_wb_pc: 000005dc
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 0000a500
+# debug_data: 00000018
+# ---------------------------------------------
+# Time: 5135
+# debug_inst_pc: 000005f0
+# debug_wb_pc: 000005e0
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 03
+# debug_wb_rf_wdata: 00000019
+# debug_data: 00000018
+# ---------------------------------------------
+# Time: 5145
+# debug_inst_pc: 000005f4
+# debug_wb_pc: 000005e4
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 18
+# debug_wb_rf_wdata: 0000063c
+# debug_data: 00000019
+# ---------------------------------------------
+# Time: 5155
+# debug_inst_pc: 000005f8
+# debug_wb_pc: 000005e8
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 7c000000
+# debug_data: 00000019
+# ---------------------------------------------
+# Time: 5165
+# debug_inst_pc: 000005fc
+# debug_wb_pc: 000005ec
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000019
+# ---------------------------------------------
+# Time: 5175
+# debug_inst_pc: 00000600
+# debug_wb_pc: 000005f0
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000019
+# ---------------------------------------------
+# Time: 5185
+# debug_inst_pc: 00000604
+# debug_wb_pc: 000005f4
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 03
+# debug_wb_rf_wdata: 0000001a
+# debug_data: 00000019
+# ---------------------------------------------
+# Time: 5195
+# debug_inst_pc: 00000608
+# debug_wb_pc: 000005f8
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 0000063c
+# debug_data: 0000001a
+# ---------------------------------------------
+# Time: 5205
+# debug_inst_pc: 0000060c
+# debug_wb_pc: 000005fc
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 80000000
+# debug_data: 0000001a
+# ---------------------------------------------
+# Time: 5215
+# debug_inst_pc: 00000610
+# debug_wb_pc: 00000600
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000001a
+# ---------------------------------------------
+# Time: 5225
+# debug_inst_pc: 00000614
+# debug_wb_pc: 00000604
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000001a
+# ---------------------------------------------
+# Time: 5235
+# debug_inst_pc: 00000618
+# debug_wb_pc: 00000608
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 03
+# debug_wb_rf_wdata: 0000001b
+# debug_data: 0000001a
+# ---------------------------------------------
+# Time: 5245
+# debug_inst_pc: 0000061c
+# debug_wb_pc: 0000060c
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 10
+# debug_wb_rf_wdata: 0000063c
+# debug_data: 0000001b
+# ---------------------------------------------
+# Time: 5255
+# debug_inst_pc: 00000620
+# debug_wb_pc: 00000610
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000001b
+# ---------------------------------------------
+# Time: 5265
+# debug_inst_pc: 00000624
+# debug_wb_pc: 00000614
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000001b
+# ---------------------------------------------
+# Time: 5275
+# debug_inst_pc: 00000628
+# debug_wb_pc: 00000618
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 03
+# debug_wb_rf_wdata: 0000001c
+# debug_data: 0000001b
+# ---------------------------------------------
+# Time: 5285
+# debug_inst_pc: 0000062c
+# debug_wb_pc: 0000061c
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 0000063c
+# debug_data: 0000001c
+# ---------------------------------------------
+# Time: 5295
+# debug_inst_pc: 00000630
+# debug_wb_pc: 00000620
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 01
+# debug_wb_rf_wdata: 02100000
+# debug_data: 0000001c
+# ---------------------------------------------
+# Time: 5305
+# debug_inst_pc: 00000634
+# debug_wb_pc: 00000624
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 02
+# debug_wb_rf_wdata: 02200000
+# debug_data: 0000001c
+# ---------------------------------------------
+# Time: 5315
+# debug_inst_pc: 00000638
+# debug_wb_pc: 00000628
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00046200
+# debug_data: 0000001c
+# ---------------------------------------------
+# Time: 5325
+# debug_inst_pc: 0000063c
+# debug_wb_pc: 0000062c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 07
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000001c
+# ---------------------------------------------
+# Time: 5335
+# debug_inst_pc: 00000654
+# debug_wb_pc: 00000630
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 03
+# debug_wb_rf_wdata: 0000001d
+# debug_data: 0000001c
+# ---------------------------------------------
+# Time: 5345
+# debug_inst_pc: 00000658
+# debug_wb_pc: 00000634
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 08
+# debug_wb_rf_wdata: 0000063c
+# debug_data: 0000001d
+# ---------------------------------------------
+# Time: 5355
+# debug_inst_pc: 0000065c
+# debug_wb_pc: 00000638
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000658
+# debug_data: 0000001d
+# ---------------------------------------------
+# Time: 5365
+# debug_inst_pc: 00000660
+# debug_wb_pc: 00000000
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000001d
+# ---------------------------------------------
+# Time: 5375
+# debug_inst_pc: 00000664
+# debug_wb_pc: 00000640
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000001d
+# ---------------------------------------------
+# Time: 5385
+# debug_inst_pc: 00000668
+# debug_wb_pc: 00000658
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 0000001d
+# ---------------------------------------------
+# Time: 5395
+# debug_inst_pc: 0000066c
+# debug_wb_pc: 0000065c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 03
+# debug_wb_rf_wdata: 00000001
+# debug_data: 0000001d
+# ---------------------------------------------
+# Time: 5405
+# debug_inst_pc: 00000670
+# debug_wb_pc: 00000660
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 11
+# debug_wb_rf_wdata: 0000005d
+# debug_data: 00000001
+# ---------------------------------------------
+# Time: 5415
+# debug_inst_pc: 00000000
+# debug_wb_pc: 00000664
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 0a
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000001
+# ---------------------------------------------
+# Time: 5425
+# debug_inst_pc: 00000004
+# debug_wb_pc: 00000668
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000001
+# ---------------------------------------------
+# Time: 5435
+# debug_inst_pc: 00000008
+# debug_wb_pc: 00000000
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000001
+# ---------------------------------------------
+# Time: 5445
+# debug_inst_pc: 0000000c
+# debug_wb_pc: 00000000
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000001
+# ---------------------------------------------
+# Time: 5455
+# debug_inst_pc: 00000010
+# debug_wb_pc: 00000674
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000001
+# ---------------------------------------------
+# Time: 5465
+# debug_inst_pc: 00000014
+# debug_wb_pc: 00000004
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 1e
+# debug_wb_rf_wdata: 0000000b
+# debug_data: 00000001
+# ---------------------------------------------
+# Time: 5475
+# debug_inst_pc: 00000018
+# debug_wb_pc: 00000008
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 1f
+# debug_wb_rf_wdata: 00000008
+# debug_data: 00000001
+# ---------------------------------------------
+# Time: 5485
+# debug_inst_pc: 0000001c
+# debug_wb_pc: 0000000c
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 10
+# debug_wb_rf_wdata: 0000003c
+# debug_data: 00000001
+# ---------------------------------------------
+# Time: 5495
+# debug_inst_pc: 00000020
+# debug_wb_pc: 00000010
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 1f
+# debug_wb_rf_wdata: 00000009
+# debug_data: 00000001
+# ---------------------------------------------
+# Time: 5505
+# debug_inst_pc: 00000038
+# debug_wb_pc: 00000014
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 08
+# debug_wb_rf_wdata: 0000003c
+# debug_data: 00000001
+# ---------------------------------------------
+# Time: 5515
+# debug_inst_pc: 0000003c
+# debug_wb_pc: 00000018
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 1f
+# debug_wb_rf_wdata: 0000000b
+# debug_data: 00000001
+# ---------------------------------------------
+# Time: 5525
+# debug_inst_pc: 00000040
+# debug_wb_pc: 0000001c
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 0000003c
+# debug_data: 00000001
+# ---------------------------------------------
+# Time: 5535
+# debug_inst_pc: 00000044
+# debug_wb_pc: 00000000
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000001
+# Data Write: Addr=00001000 Data=00000001 Strb=1111
+# ---------------------------------------------
+# Time: 5545
+# debug_inst_pc: 00000048
+# debug_wb_pc: 00000024
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 00
+# debug_wb_rf_wdata: 00000000
+# debug_data: 00000001
+# ---------------------------------------------
+# Time: 5555
+# debug_inst_pc: 00000038
+# debug_wb_pc: 0000003c
+# debug_wb_rf_wen: 1
+# debug_wb_rf_wnum: 1e
+# debug_wb_rf_wdata: 0000103c
+# debug_data: 00000001
+# ---------------------------------------------
+# Time: 5565
+# debug_inst_pc: 0000003c
+# debug_wb_pc: 00000040
+# debug_wb_rf_wen: 0
+# debug_wb_rf_wnum: 04
+# debug_wb_rf_wdata: 00001000
+# debug_data: 00000001
+# ---------------------------------------------
+# Time: 5575
+# Simulation finished.
+# ----------------------------------------------
+# Test passed.
+# ----------------------------------------------
+# ** Note: $stop    : test/tb_top.v(81)
+#    Time: 5575 ns  Iteration: 1  Instance: /tb_top
+# Break at test/tb_top.v line 81
+# Stopped at test/tb_top.v line 81
+#  quit -force
+# End time: 21:58:06 on Mar 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
