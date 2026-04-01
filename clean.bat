@@ -5,5 +5,5 @@ del /q transcript
 del /q vsim.wlf
 del /q *.vcd
 del /q *.log
-REM del /q results\*.txt
+del /q results\*.txt
 echo Done.

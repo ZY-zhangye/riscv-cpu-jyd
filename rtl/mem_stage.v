@@ -29,9 +29,7 @@ module mem_stage (
     output wire [31:0] exception_mtval,
     //中断相关信号
     input wire timer_interrupt_flag,
-    output wire [4:0] interrupt_code,
-    //单独乘法器模块的计算结果
-    input wire [31:0] mul_result
+    output wire [4:0] interrupt_code
 );
 
 wire ms_ready_go = 1'b1; // MEM 阶段无内部停顿，始终准备好
@@ -56,7 +54,7 @@ wire [31:0] mem_pc;
 wire [31:0] alu_result;
 wire [4:0] rd_out;
 wire rd_wen;
-wire [2:0] wb_sel;
+wire [1:0] wb_sel;
 wire mem_csr_we;
 wire [11:0] mem_csr_addr;
 wire [31:0] mem_csr_wdata;
@@ -100,10 +98,9 @@ wire [31:0] mem_rd_data = (mem_size[0] && mem_size[1]) ? (mem_size[2] ? {{24{sel
 wire [31:0] mem_result = mem_rd_data; // 访存结果，后续可能需要根据mem_size进行符号扩展或零扩展
 
 // 最终写回的数据选择
-wire [31:0] ms_final_result = (wb_sel == 3'b000) ? alu_result : // ALU结果
-                             (wb_sel == 3'b001) ? mem_result : // 访存结果
-                             (wb_sel == 3'b010) ? mem_pc + 4 : // PC+4
-                             (wb_sel == 3'b100) ? mul_result : // 单独乘法器结果
+wire [31:0] ms_final_result = (wb_sel == 2'b00) ? alu_result : // ALU结果
+                             (wb_sel == 2'b01) ? mem_result : // 访存结果
+                             (wb_sel == 2'b10) ? mem_pc + 4 : // PC+4
                              32'b0; // 其他情况写入0（如不涉及写回的指令）
 
 // 输出到写回阶段的总线打包

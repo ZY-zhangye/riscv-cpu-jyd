@@ -45,7 +45,7 @@ module if_stage (
             fs_valid <= 1'b1;
         end
         if (!rst_n) begin
-            fs_pc <= 32'hffff_fffc; // -4，确保第一个pc_out为0
+            fs_pc <= `PC_START - 4; // -4，确保第一个pc_out为0
         end else if (fs_allowin) begin
             fs_pc <= next_pc;
         end

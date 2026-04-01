@@ -1,4 +1,4 @@
-`define MEM_HEX_PATH "C:\\Users\\ZY\\Desktop\\riscv-cpu-rnew\\hex\\riscv-tests\\rv32-p-riscv.hex"
+`define MEM_HEX_PATH "C:\\Users\\ZY\\Desktop\\riscv-cpu-jyd\\hex\\riscv-tests\\rv32-p-riscv.hex"
 // 加载内存文件
 /*# 定义【标准整数运算指令集】数组 - RV32I 基础指令全集
 UI_INSTS=(sw lw add addi sub and andi or ori xor xori 
@@ -44,8 +44,8 @@ always #5 clk = ~clk; // 100MHz
 
 initial begin
     $display("Starting simulation...");
-    $dumpfile("tb_top.vcd");    // 指定波形文件名
-    $dumpvars(0, tb_top);   // 0表示tb_top模块及其所有子模块
+    $dumpfile("u_my_cpu.vcd");    // 指定波形文件名
+    $dumpvars(0, u_my_cpu);   // 0表示tb_top模块及其所有子模块
     #25000; // 设定最大结束时间，避免仿真无限进行
     $display("----------------------------------------------");
     $display("Simulation timeout.");
