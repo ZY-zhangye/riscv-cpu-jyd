@@ -17,12 +17,9 @@ wire debug_wb_rf_wen;
 wire [4:0] debug_wb_rf_wnum;
 wire [31:0] debug_wb_rf_wdata;
 wire [31:0] debug_data;
-wire [3:0] led;
 wire [31:0] imem_addr;
 
-my_cpu  #(
-    .MEM_HEX_PATH(`MEM_HEX_PATH)
-) u_my_cpu(
+my_cpu  u_my_cpu(
     .clk(clk),
     .rst_n(rst_n),
     .debug_inst_pc(imem_addr),
@@ -30,8 +27,7 @@ my_cpu  #(
     .debug_wb_rf_wen(debug_wb_rf_wen),
     .debug_wb_rf_wnum(debug_wb_rf_wnum),
     .debug_wb_rf_wdata(debug_wb_rf_wdata),
-    .debug_data(debug_data),
-    .led(led)
+    .debug_data(debug_data)
 );
 
 initial begin

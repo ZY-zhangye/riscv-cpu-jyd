@@ -112,110 +112,158 @@ assign {
     exe_mem_size
 } = ds_to_es_bus_r;
 
-// ALU操作数选择
+// ALU操作数选择 - 并行掩码合并结构（降低选择链深度）
 wire [31:0] op1_data;
 wire [31:0] op2_data;
-assign op1_data = exe_op1_sel[2] ? exe_rs1_data :
-                                    exe_op1_sel[1] ? exe_pc :
-                                    exe_op1_sel[0] ? exe_imm : 32'b0;
-assign op2_data = |exe_csr_cmd ? csr_rdata :
-                                        exe_op2_sel[1] ? exe_rs2_data :
-                                        exe_op2_sel[0] ? exe_imm : 32'b0;
 
-// ALU计算结果
-wire ALU_ADD;          //加法
-wire ALU_ADDI;                  //加法（有符号）        
-wire ALU_SUB;           //减法
-wire ALU_AND;           //按位与
-wire ALU_OR;            //按位或
-wire ALU_XOR;           //按位异或
-wire ALU_SLL;           //逻辑左移
-wire ALU_SRL;           //逻辑右移
-wire ALU_SRA;           //算术右移
-wire ALU_SLT;           //有符号比较小于
-wire ALU_SLTU;          //无符号比较小于
-wire ALU_JALR;          //JALR指令的ALU操作（计算跳转地址）
-wire ALU_COPY1;         //仅将第一个操作数传递到EXE阶段（用于CSR指令，ALU不进行计算）
+// op1_data优先级保持不变: sel[2] > sel[0] > sel[1] > default(rs1)
+wire op1_sel_rs1 = exe_op1_sel[2] | (~exe_op1_sel[2] & ~exe_op1_sel[0] & ~exe_op1_sel[1]);
+wire op1_sel_pc  = ~exe_op1_sel[2] & ~exe_op1_sel[0] &  exe_op1_sel[1];
+wire op1_sel_imm = ~exe_op1_sel[2] &  exe_op1_sel[0];
+assign op1_data = ({32{op1_sel_rs1}} & exe_rs1_data) |
+                  ({32{op1_sel_pc }} & exe_pc) |
+                  ({32{op1_sel_imm}} & exe_imm);
+
+// op2_data: CSR读优先，否则rs2/imm二选一
+wire op2_sel_csr = |exe_csr_cmd;
+wire op2_sel_rs2 = ~op2_sel_csr &  exe_op2_sel[1];
+wire op2_sel_imm = ~op2_sel_csr &  exe_op2_sel[0];
+assign op2_data = ({32{op2_sel_csr}} & csr_rdata) |
+                  ({32{op2_sel_rs2}} & exe_rs2_data) |
+                  ({32{op2_sel_imm}} & exe_imm);
+
+// ALU计算结果 - 优化关键路径
+wire [31:0] alu_add;            // 加法 - 关键路径
+wire [31:0] alu_addi;           // 加法（有符号） - 关键路径
+wire [31:0] alu_sub;            // 减法 - 关键路径
+wire [31:0] alu_and;            // 按位与 - 快速路径
+wire [31:0] alu_or;             // 按位或 - 快速路径
+wire [31:0] alu_xor;            // 按位异或 - 快速路径
+wire [31:0] alu_sll;            // 逻辑左移
+wire [31:0] alu_srl;            // 逻辑右移
+wire [31:0] alu_sra;            // 算术右移
+wire [31:0] alu_slt;            // 有符号比较小于
+wire [31:0] alu_sltu;           // 无符号比较小于
+wire [31:0] alu_jalr;           // JALR指令的ALU操作
+wire [31:0] alu_copy1;          // 仅将第一个操作数传递
+
+// 关键路径加法 - 共享单一加法结果（ADD/ADDI/JALR复用）
+wire [31:0] alu_add_common = op1_data + op2_data;
+assign alu_add = alu_add_common;
+assign alu_addi = alu_add_common;
+assign alu_sub = op1_data - op2_data;
+
+// 快速逻辑运算 - 并行计算
+assign alu_and = op1_data & op2_data;
+assign alu_or  = op1_data | op2_data;
+assign alu_xor = op1_data ^ op2_data;
+
+// 其他运算
+assign alu_sll = op1_data << op2_data[4:0];
+assign alu_srl = op1_data >> op2_data[4:0];
+assign alu_sra = ({{32{op1_data[31]}}, op1_data} >> op2_data[4:0]);
+assign alu_slt = ($signed(op1_data) < $signed(op2_data)) ? 32'd1 : 32'd0;
+assign alu_sltu = (op1_data < op2_data) ? 32'd1 : 32'd0;
+assign alu_jalr = alu_add_common & ~32'd1;
+assign alu_copy1 = csr_rdata;
+wire [31:0] alu_csrrc = op2_data & ~op1_data; 
+
+// ALU操作类型解码
+wire ALU_ADD, ALU_ADDI, ALU_SUB, ALU_AND, ALU_OR, ALU_XOR;
+wire ALU_SLL, ALU_SRL, ALU_SRA, ALU_SLT, ALU_SLTU;
+wire ALU_JALR, ALU_COPY1;
 assign {ALU_ADD, ALU_ADDI, ALU_SUB, ALU_AND, ALU_OR, ALU_XOR,
         ALU_SLL, ALU_SRL, ALU_SRA, ALU_SLT, ALU_SLTU,
         ALU_JALR, ALU_COPY1} = exe_alu_op;
 
-
-wire [31:0] alu_add = op1_data + op2_data;
-wire [31:0] alu_addi = $signed(op1_data) + $signed(op2_data);
-wire [31:0] alu_sub = op1_data - op2_data;
-wire [31:0] alu_and = op1_data & op2_data;
-wire [31:0] alu_or  = op1_data | op2_data;
-wire [31:0] alu_xor = op1_data ^ op2_data;
-wire [31:0] alu_sll = op1_data << op2_data[4:0];
-wire [31:0] alu_srl = op1_data >> op2_data[4:0];
-wire [31:0] alu_sra = ({{32{op1_data[31]}}, op1_data} >> op2_data[4:0]);
-wire [31:0] alu_slt = ($signed(op1_data) < $signed(op2_data)) ? 32'd1 : 32'd0;
-wire [31:0] alu_sltu = (op1_data < op2_data) ? 32'd1 : 32'd0;
-wire [31:0] alu_jalr = (op1_data + op2_data) & ~32'd1;
-wire [31:0] alu_copy1 = csr_rdata;
+// 分支比较结果 - 直接使用原始数据,避免锁存延迟
 wire alu_beq = (exe_rs1_data == exe_rs2_data) ? 1'b1 : 1'b0;
 wire alu_blt = ($signed(exe_rs1_data) < $signed(exe_rs2_data)) ? 1'b1 : 1'b0;
 wire alu_bltu = (exe_rs1_data < exe_rs2_data) ? 1'b1 : 1'b0;
-wire [31:0] alu_csrrc = op2_data & ~op1_data; 
 
-reg [31:0] alu_result;
-always @(*) begin
-    case (1'b1)
-        ALU_ADD:   alu_result = alu_add;
-        ALU_ADDI:  alu_result = alu_addi;
-        ALU_SUB:   alu_result = alu_sub;
-        ALU_AND:   alu_result = alu_and;
-        ALU_OR:    alu_result = alu_or;
-        ALU_XOR:   alu_result = alu_xor;
-        ALU_SLL:   alu_result = alu_sll;
-        ALU_SRL:   alu_result = alu_srl;
-        ALU_SRA:   alu_result = alu_sra;
-        ALU_SLT:   alu_result = alu_slt;
-        ALU_SLTU:  alu_result = alu_sltu;
-        ALU_JALR:  alu_result = alu_jalr;
-        ALU_COPY1: alu_result = alu_copy1;
-        default:   alu_result = 32'b0;
-    endcase
-end
+// ALU结果选择 - 并行掩码合并，替代长优先级链
+wire [31:0] alu_result;
+wire [31:0] alu_result_addsub = ({32{ALU_ADD }} & alu_add ) |
+                                ({32{ALU_ADDI}} & alu_addi) |
+                                ({32{ALU_SUB }} & alu_sub );
+wire [31:0] alu_result_logic  = ({32{ALU_AND }} & alu_and ) |
+                                ({32{ALU_OR  }} & alu_or  ) |
+                                ({32{ALU_XOR }} & alu_xor );
+wire [31:0] alu_result_shift  = ({32{ALU_SLL }} & alu_sll ) |
+                                ({32{ALU_SRL }} & alu_srl ) |
+                                ({32{ALU_SRA }} & alu_sra );
+wire [31:0] alu_result_misc   = ({32{ALU_SLT  }} & alu_slt  ) |
+                                ({32{ALU_SLTU }} & alu_sltu ) |
+                                ({32{ALU_JALR }} & alu_jalr ) |
+                                ({32{ALU_COPY1}} & alu_copy1);
+assign alu_result = alu_result_addsub | alu_result_logic | alu_result_shift | alu_result_misc;
 
-// 分支比较结果
-wire br_flag = (exe_br_type == 3'b001) ? alu_beq :
-               (exe_br_type == 3'b010) ? ~alu_beq :
-               (exe_br_type == 3'b011) ? alu_blt :
-               (exe_br_type == 3'b100) ? ~alu_blt :
-               (exe_br_type == 3'b101) ? alu_bltu :
-               (exe_br_type == 3'b110) ? ~alu_bltu : 1'b0;
+// 分支比较结果 - 并行解码
+wire br_beq  = (exe_br_type == 3'b001);
+wire br_bne  = (exe_br_type == 3'b010);
+wire br_blt  = (exe_br_type == 3'b011);
+wire br_bge  = (exe_br_type == 3'b100);
+wire br_bltu = (exe_br_type == 3'b101);
+wire br_bgeu = (exe_br_type == 3'b110);
+wire br_flag = (br_beq  &  alu_beq ) |
+               (br_bne  & ~alu_beq ) |
+               (br_blt  &  alu_blt ) |
+               (br_bge  & ~alu_blt ) |
+               (br_bltu &  alu_bltu) |
+               (br_bgeu & ~alu_bltu);
 assign br_taken = exe_jmp_flag || (|exe_br_type && br_flag);
 assign br_target = exe_jmp_flag ? alu_jalr : alu_result;
 
-//访存信号
+// 访存专用通路：地址/写使能/写数据完全独立于ALU结果选择链
+wire [31:0] mem_addr_calc = exe_rs1_data + exe_imm;
+wire exe_mem_size_0 = exe_mem_size[0];
+wire exe_mem_size_1 = exe_mem_size[1];
+wire mem_size_word = ~exe_mem_size_0 & ~exe_mem_size_1;
+wire mem_size_half =  exe_mem_size_0 & ~exe_mem_size_1;
+wire mem_size_byte =  exe_mem_size_0 &  exe_mem_size_1;
+
+wire exe_mem_addr_bit1 = mem_addr_calc[1];
+wire exe_mem_addr_bit0 = mem_addr_calc[0];
+wire [1:0] exe_mem_addr_bits = mem_addr_calc[1:0];
+
+// 写使能：按访存宽度one-hot解码后并行组合
+wire [3:0] data_sram_wen_32bit = 4'b1111;
+wire [3:0] data_sram_wen_16bit = exe_mem_addr_bit1 ? 4'b1100 : 4'b0011;
+wire [3:0] data_sram_wen_8bit = 4'b0001 << exe_mem_addr_bits;
+wire [3:0] data_sram_wen_uncoded = ({4{mem_size_word}} & data_sram_wen_32bit) |
+                                   ({4{mem_size_half}} & data_sram_wen_16bit) |
+                                   ({4{mem_size_byte}} & data_sram_wen_8bit);
+
+// 写数据：按访存宽度并行展开，避免级联选择链
+wire [31:0] data_sram_wdata_32bit = exe_rs2_data;
+wire [31:0] data_sram_wdata_16bit = {exe_rs2_data[15:0], exe_rs2_data[15:0]};
+wire [31:0] data_sram_wdata_8bit = {exe_rs2_data[7:0], exe_rs2_data[7:0], exe_rs2_data[7:0], exe_rs2_data[7:0]};
+
 assign data_sram_en = exe_mem_re;
-assign data_sram_wen = (exe_mem_we && es_allowin) ? 
-                        ((exe_mem_size[0] && exe_mem_size[1]) ? (4'b0001 << alu_result[1:0]) : // 8位访存（字节次序反转）
-                        (exe_mem_size[0] && !exe_mem_size[1]) ? (alu_result[1] ? 4'b1100 : 4'b0011) : // 16位访存（低/高半字交换）
-                        (!exe_mem_size[0]) ? 4'b1111 : // 32位访存
-                        4'b0000) : 4'b0000; // 非写操作时，写使能全为0
-assign data_sram_addr = alu_result;
-assign data_sram_wdata = (exe_mem_size[0] && !exe_mem_size[1]) ? {exe_rs2_data[15:0],exe_rs2_data[15:0]} : // 16位访存，数据复制到高16位
-                        (exe_mem_size[0] && exe_mem_size[1]) ? {exe_rs2_data[7:0], exe_rs2_data[7:0], exe_rs2_data[7:0], exe_rs2_data[7:0]} : // 8位访存，数据复制到所有字节
-                        exe_rs2_data; // 32位访存
+assign data_sram_addr = mem_addr_calc;
+assign data_sram_wen = (exe_mem_we && es_allowin) ? data_sram_wen_uncoded : 4'b0000;
+assign data_sram_wdata = ({32{mem_size_word}} & data_sram_wdata_32bit) |
+                         ({32{mem_size_half}} & data_sram_wdata_16bit) |
+                         ({32{mem_size_byte}} & data_sram_wdata_8bit);
+
 wire [4:0] exe_to_mem_size;
-assign exe_to_mem_size = {alu_result[1:0], exe_mem_size};
+assign exe_to_mem_size = {exe_mem_addr_bits, exe_mem_size};
 
 //数据前递
 assign exe_id_data = alu_result;
 assign exe_id_waddr = exe_rd_addr;
 assign exe_id_we = exe_rd_wen;
 
-//csr写数据
-wire [31:0] exe_csr_wdata = (exe_csr_cmd == 4'b0001) ? op1_data : // CSRRW
-                            (exe_csr_cmd == 4'b0010) ? alu_or : // CSRRS
-                            (exe_csr_cmd == 4'b0011) ? alu_csrrc : // CSRRC
-                            (exe_csr_cmd == 4'b0101) ? op1_data : // CSRRWI
-                            (exe_csr_cmd == 4'b0110) ? alu_or : // CSRRSI
-                            (exe_csr_cmd == 4'b0111) ? alu_csrrc :
-                        32'b0; // 其他情况写入0（如不涉及CSR操作的指令）
+// csr写数据 - 并行命令解码
+wire csr_cmd_csrrw  = (exe_csr_cmd == 4'b0001);
+wire csr_cmd_csrrs  = (exe_csr_cmd == 4'b0010);
+wire csr_cmd_csrrc  = (exe_csr_cmd == 4'b0011);
+wire csr_cmd_csrrwi = (exe_csr_cmd == 4'b0101);
+wire csr_cmd_csrrsi = (exe_csr_cmd == 4'b0110);
+wire csr_cmd_csrrci = (exe_csr_cmd == 4'b0111);
+wire [31:0] exe_csr_wdata = ({32{csr_cmd_csrrw  | csr_cmd_csrrwi}} & op1_data) |
+                            ({32{csr_cmd_csrrs  | csr_cmd_csrrsi}} & alu_or) |
+                            ({32{csr_cmd_csrrc  | csr_cmd_csrrci}} & alu_csrrc);
 assign exe_id_csr_wdata = exe_csr_wdata;
 assign exe_id_csr_we = exe_csr_we;
 assign exe_id_csr_addr = exe_csr_addr;
@@ -235,15 +283,15 @@ assign exe_mem_bus_out = {
 
 // 输出异常相关信号
 wire exception_iam = br_taken && (br_target[1:0] != 2'b00); // 判断分支跳转目标地址是否为非4字节对齐
-wire exception_lam = ((!exe_mem_size[0] && alu_result[1:0] != 2'b00 && exe_mem_re) ||
-                    (exe_mem_size[0] && !exe_mem_size[1] && alu_result[0] != 1'b0 && exe_mem_re)); // 32位访存时，地址必须为4字节对齐;16位访存时，地址必须为2字节对齐
-wire exception_sam = (exe_mem_we && !exe_mem_size[0] && alu_result[1:0] != 2'b00) || (exe_mem_we && exe_mem_size[0] && !exe_mem_size[1] && alu_result[0] != 1'b0); // 8位访存时，地址必须为4字节对齐;16位访存时，地址必须为2字节对齐
+wire exception_lam = ((!exe_mem_size[0] && exe_mem_addr_bits != 2'b00 && exe_mem_re) ||
+                    (exe_mem_size[0] && !exe_mem_size[1] && exe_mem_addr_bit0 != 1'b0 && exe_mem_re)); // 32位访存时，地址必须为4字节对齐;16位访存时，地址必须为2字节对齐
+wire exception_sam = (exe_mem_we && !exe_mem_size[0] && exe_mem_addr_bits != 2'b00) || (exe_mem_we && exe_mem_size[0] && !exe_mem_size[1] && exe_mem_addr_bit0 != 1'b0); // 8位访存时，地址必须为4字节对齐;16位访存时，地址必须为2字节对齐
 assign exception_code_em = exception_iam ? 6'b100000 :
                            exception_lam ? 6'b100100 :
                            exception_sam ? 6'b100110 :
                            exception_code_reg; 
 assign exception_mtval_em = exception_iam ? br_target : 
-                            (exception_lam || exception_sam) ? alu_result :
+                            (exception_lam || exception_sam) ? mem_addr_calc :
                             exception_mtval_reg;
 
 endmodule

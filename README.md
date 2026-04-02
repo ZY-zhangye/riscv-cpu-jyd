@@ -28,6 +28,7 @@
 ├─ test/                # 测试平台（tb_top.v）
 ├─ hex/riscv-tests/     # RISC-V 测试程序HEX镜像
 ├─ results/             # 批量测试输出日志（每条指令一个txt）
+├─digital_twin          # vivado工程文件
 ├─ run_all.bat          # 批量编译+回归脚本
 ├─ clean.bat            # 清理仿真临时文件
 └─ README.md
@@ -65,7 +66,7 @@
 
 - 指令访问：直连 `inst_ram`
 - 数据访问：当前实现下主要走 `data_ram`
-- LED：当写地址高4位为 `0x8` 且有写使能时，更新 `led[3:0]`
+- IO：通过地址划分至`IO`或者`data_ram`
 
 ---
 
@@ -111,9 +112,9 @@
 
 ### 6.1 HEX 文件路径问题（非常关键）
 
-`test/tb_top.v` 里有宏：
-
-- `` `define MEM_HEX_PATH "C:\\Users\\ZY\\Desktop\\riscv-cpu-rnew\\hex\\riscv-tests\\rv32-p-riscv.hex" ``
+`defines.v`中有与仿真文件定义的地址宏
+``define TEST_INST_PATH "C:\\Users\\ZY\\Desktop\\riscv-cpu-jyd\\hex\\riscv-tests\\rv32-p-riscv.hex"`
+``define TEST_DATA_PATH "C:\\Users\\ZY\\Desktop\\riscv-cpu-jyd\\hex\\riscv-tests\\rv32-p-riscv.hex"`
 
 如果你的本地路径不是这个绝对路径，仿真会出现找不到镜像或加载错误。请改成你机器上的真实路径，或改为相对路径管理。
 
@@ -126,6 +127,10 @@
 - 先看 `results/<case>.txt` 的最后几十行
 - 重点检查 `debug_wb_pc/debug_wb_rf_* / debug_data`
 - `tb_top.v` 在 `debug_wb_pc == 32'h00000044` 处进行收敛判定
+
+### 6.4 DEBUG接口启用
+
+-`defines.v`中定义有``define DEBUG_INTERFACE_ENABLE 1`将其注释掉表示不启用debug接口，同时也会关闭IO地址映射
 
 ---
 

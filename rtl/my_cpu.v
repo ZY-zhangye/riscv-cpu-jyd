@@ -1,9 +1,9 @@
-module my_cpu #(
-    parameter MEM_HEX_PATH = "C:\\Users\\ZY\\Desktop\\riscv-cpu-jyd\\hex\\riscv-tests\\rv32-p-riscv.hex"
-)
+`include "defines.v"
+module my_cpu
 (
     input wire clk,
     input wire rst_n,
+    `ifdef DEBUG_INTERFACE_ENABLE
     //debug接口
     output wire [31:0] debug_inst_pc,
     output wire [31:0] debug_wb_pc,
@@ -11,8 +11,12 @@ module my_cpu #(
     output wire [4:0] debug_wb_rf_wnum,
     output wire [31:0] debug_wb_rf_wdata,
     output wire [31:0] debug_data,
+    `endif
     //外设接口
-    output wire [3:0] led
+    output wire [31:0] led,
+    input wire [7:0] key,
+    input wire [63:0] sw,
+    output wire [31:0] s
 );
 wire [31:0] imem_addr;
 wire [31:0] imem_rdata;
@@ -33,17 +37,27 @@ wire [31:0] data_ram_addr;
 wire [31:0] data_ram_rdata;
 wire [3:0]  data_ram_wen;
 wire [31:0] data_ram_wdata;
+wire io_ren;
+wire [31:0] io_addr;
+wire [31:0] io_rdata;
+wire [3:0] io_wen;
+wire [31:0] io_wdata;
 
+
+`ifdef DEBUG_INTERFACE_ENABLE
 assign debug_inst_pc = imem_addr - 4;
+`endif
 
 top u_top(
     .clk(clk),
     .rst_n(rst_n),
+    `ifdef DEBUG_INTERFACE_ENABLE
     .debug_wb_pc(debug_wb_pc),
     .debug_wb_rf_wen(debug_wb_rf_wen),
     .debug_wb_rf_wnum(debug_wb_rf_wnum),
     .debug_wb_rf_wdata(debug_wb_rf_wdata),
     .debug_data(debug_data),
+    `endif
     .imem_addr(imem_addr),
     .imem_rdata(imem_rdata),
     .imem_ren(imem_ren),
@@ -75,12 +89,28 @@ bridge u_bridge(
     .dmem_wen(dmem_wen),
     .dmem_rdata(dmem_rdata),
     .dmem_en(dmem_en),
-    .led(led)
+    .io_ren(io_ren),
+    .io_addr(io_addr),
+    .io_rdata(io_rdata),
+    .io_wen(io_wen),
+    .io_wdata(io_wdata)
 );
 
-inst_ram  #(
-    .MEM_HEX_PATH(MEM_HEX_PATH)
-)u_inst_ram
+IO u_io(
+    .clk(clk),
+    .rst_n(rst_n),
+    .ren(io_ren),
+    .addr(io_addr),
+    .rdata(io_rdata),
+    .wen(io_wen),
+    .wdata(io_wdata),
+    .led(led),
+    .key(key),
+    .sw(sw),
+    .s(s)
+);
+
+inst_ram u_inst_ram
 (
     .clk(clk),
     .rst_n(rst_n),
@@ -91,9 +121,7 @@ inst_ram  #(
     .inst_ram_wdata(inst_ram_wdata)
 );
 
-data_ram  #(
-    .MEM_HEX_PATH(MEM_HEX_PATH)
-)u_data_ram
+data_ram u_data_ram
 (
     .clk(clk),
     .rst_n(rst_n),

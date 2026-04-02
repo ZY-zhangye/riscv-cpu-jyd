@@ -1,5 +1,6 @@
+`include "defines.v"
 module inst_ram #(
-    parameter MEM_HEX_PATH = "C:\\Users\\ZY\\Desktop\\riiscv-cpu-rnew\\hex\\riscv-tests\\rv32ui-p-lui.hex"
+    parameter MEM_HEX_PATH = `TEST_INST_PATH
 )
 (
     input wire clk,

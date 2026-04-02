@@ -10,10 +10,14 @@
 `define MEMORY_MAP 1
 
 //MIMO外设地址
-`define SW_START 32'h0000F000
-`define SW_SIZE  15
-`define KEY_START 32'h0000F010
-`define KEY_SIZE  15
-`define SEG_ADDR 32'h0000F020
-`define LED_START 32'h0000F040
-`define LED_SIZE  15
+`define SW_LOW_ADDR  32'h00007F00
+`define SW_HIGH_ADDR 32'h00007F04
+`define KEY_ADDR     32'h00007F10
+`define SWG_ADDR    32'h00007F20
+`define LED_ADDR     32'h00007F40
+
+//定义debug接口使能，注释掉为不启用debug接口
+`define DEBUG_INTERFACE_ENABLE 1
+//定义逻辑验证时使用的测试指令文件路径
+`define TEST_INST_PATH "C:\\Users\\ZY\\Desktop\\riscv-cpu-jyd\\hex\\riscv-tests\\rv32-p-riscv.hex"
+`define TEST_DATA_PATH "C:\\Users\\ZY\\Desktop\\riscv-cpu-jyd\\hex\\riscv-tests\\rv32-p-riscv.hex"
