@@ -12,9 +12,9 @@ echo "Please update the PATH and LD_LIBRARY_PATH variables below, before executi
 exit
 
 if [ -z "$PATH" ]; then
-  PATH=D:/Vivado/2023.2/ids_lite/ISE/bin/nt64;D:/Vivado/2023.2/ids_lite/ISE/lib/nt64:D:/Vivado/2023.2/bin
+  PATH=F:/Xilinx/Vivado/2023.2/ids_lite/ISE/bin/nt64;F:/Xilinx/Vivado/2023.2/ids_lite/ISE/lib/nt64:F:/Xilinx/Vivado/2023.2/bin
 else
-  PATH=D:/Vivado/2023.2/ids_lite/ISE/bin/nt64;D:/Vivado/2023.2/ids_lite/ISE/lib/nt64:D:/Vivado/2023.2/bin:$PATH
+  PATH=F:/Xilinx/Vivado/2023.2/ids_lite/ISE/bin/nt64;F:/Xilinx/Vivado/2023.2/ids_lite/ISE/lib/nt64:F:/Xilinx/Vivado/2023.2/bin:$PATH
 fi
 export PATH
 
@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='D:/fpga/digital_twin/platform/digital_twin/digital_twin.runs/synth_1'
+HD_PWD='C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

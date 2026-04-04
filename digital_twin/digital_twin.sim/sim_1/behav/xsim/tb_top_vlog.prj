@@ -1,15 +1,27 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  --include "../../../../digital_twin.ip_user_files/ipstatic" \
+"../../../../digital_twin.gen/sources_1/ip/blk_mem_gen_0/sim/blk_mem_gen_0.v" \
+"../../../../digital_twin.gen/sources_1/ip/blk_mem_gen_1/sim/blk_mem_gen_1.v" \
 "../../../../digital_twin.gen/sources_1/ip/pll_1/pll_clk_wiz.v" \
 "../../../../digital_twin.gen/sources_1/ip/pll_1/pll.v" \
-"../../../../digital_twin.srcs/sources_1/new/display_seg.v" \
+"../../../../../新建文件夹/IO.v" \
+"../../../../../新建文件夹/bridge.v" \
+"../../../../../新建文件夹/cpu_top.v" \
+"../../../../../新建文件夹/exe_stage.v" \
+"../../../../../新建文件夹/id_stage.v" \
+"../../../../../新建文件夹/if_stage.v" \
+"../../../../../新建文件夹/mem_stage.v" \
+"../../../../../新建文件夹/my_cpu.v" \
+"../../../../../新建文件夹/regfiles.v" \
+"../../../../../新建文件夹/regfiles_csr.v" \
+"../../../../../新建文件夹/wb_stage.v" \
 
 sv xil_defaultlib  --include "../../../../digital_twin.ip_user_files/ipstatic" \
-"../../../../digital_twin.srcs/sources_1/new/seg7.sv" \
-"../../../../digital_twin.srcs/sources_1/new/student_top.sv" \
-"../../../../digital_twin.srcs/sources_1/new/top.sv" \
-"../../../../digital_twin.srcs/sources_1/new/twin_controller.sv" \
-"../../../../digital_twin.srcs/sources_1/new/uart.sv" \
+"../../../../../新建文件夹/display_seg.sv" \
+"../../../../../新建文件夹/seg7.sv" \
+"../../../../../新建文件夹/top.sv" \
+"../../../../../新建文件夹/twin_controller.sv" \
+"../../../../../新建文件夹/uart.sv" \
 "../../../../digital_twin.srcs/sim_1/new/tb_top.sv" \
 
 # compile glbl module

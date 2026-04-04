@@ -1,88 +1,263 @@
 #-----------------------------------------------------------
-# Vivado v2024.2 (64-bit)
-# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
-# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
-# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Wed Apr  1 15:46:14 2026
-# Process ID         : 13144
-# Current directory  : C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin
-# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent15708 C:\Users\ZY\Desktop\riscv-cpu-jyd\digital_twin\digital_twin.xpr
-# Log file           : C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/vivado.log
-# Journal file       : C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin\vivado.jou
-# Running On         : ZY
-# Platform           : Windows Server 2016 or Windows 10
-# Operating System   : 22631
-# Processor Detail   : AMD Ryzen 7 6800HS Creator Edition
-# CPU Frequency      : 3194 MHz
-# CPU Physical cores : 8
-# CPU Logical cores  : 16
-# Host memory        : 14702 MB
-# Swap memory        : 4831 MB
-# Total Virtual      : 19533 MB
-# Available Virtual  : 9486 MB
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Fri Apr  3 14:23:31 2026
+# Process ID: 9568
+# Current directory: C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2024 C:\Users\ZY\Desktop\riscv-cpu-jyd\digital_twin\digital_twin.xpr
+# Log file: C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/vivado.log
+# Journal file: C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin\vivado.jou
+# Running On: ZY, OS: Windows, CPU Frequency: 3194 MHz, CPU Physical cores: 16, Host memory: 14702 MB
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.xpr
-INFO: [Project 1-313] Project file moved from 'C:/Users/KTD/Desktop/digital_twin' since last save.
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:ac701:part0:1.4 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/ac701/1.4/board.xml as part xc7a200tfbg676-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.4 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu116/1.4/board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.5 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu116/1.5/board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:sp701:part0:1.0 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/sp701/1.0/board.xml as part xc7s100fgga676-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:sp701:part0:1.1 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/sp701/1.1/board.xml as part xc7s100fgga676-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc707:part0:1.4 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vc707/1.4/board.xml as part xc7vx485tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc709:part0:1.8 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vc709/1.8/board.xml as part xc7vx690tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:2.2 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/2.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.0 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.1 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.2 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.0 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.1 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.6 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.6/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.7 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.7/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu110:part0:1.4 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu110/1.4/board.xml as part xcvu190-flgc2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.0 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.0/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.3 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.3/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.4 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.4/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128:part0:1.0 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu128/production/1.0/board.xml as part xcvu37p-fsvh2892-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu129/production/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu1525:part0:1.3 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu1525/1.3/board.xml as part xcvu9p-fsgd2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.0 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.1 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.1/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.0 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.1 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.1/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_mpsoc:part0:1.0 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vermeo_t1_mpsoc/1.0/board.xml as part xczu19eg-ffvd1760-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_rfsoc:part0:1.0 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vermeo_t1_rfsoc/1.0/board.xml as part xczu21dr-ffvd1156-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.0 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.1 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.0 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.1 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:2.2 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/2.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.0 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.1 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.2 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.0 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.1 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.0 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.1 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.1/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.2 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.0 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.1 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.1/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zc702:part0:1.4 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zc702/1.4/board.xml as part xc7z020clg484-1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zc706:part0:1.4 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zc706/1.4/board.xml as part xc7z045ffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.3 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu102/3.3/board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.4 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu102/3.4/board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu104:part0:1.1 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu104/1.1/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.4 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu106/2.4/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.5 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu106/2.5/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.6 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu106/2.6/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.2 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.2/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.3 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.3/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.4 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.4/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1275:part0:1.0 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu1275/1.0/board.xml as part xczu29dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1285:part0:1.0 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu1285/1.0/board.xml as part xczu39dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208:part0:2.0 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208/production/2.0/board.xml as part xczu48dr-fsvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216:part0:2.0 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216/production/2.0/board.xml as part xczu49dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at F:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
 Scanning sources...
 Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'F:/Xilinx/Vivado/2024.2/data/ip'.
-WARNING: [IP_Flow 19-2162] IP 'pll' is locked:
-* IP definition 'Clocking Wizard (6.0)' for IP 'pll' (customized with software release 2023.2) has a different revision in the IP Catalog.
-INFO: [Project 1-230] Project 'digital_twin.xpr' upgraded for this version of Vivado.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'F:/Xilinx/Vivado/2023.2/data/ip'.
+open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1546.113 ; gain = 436.824
 update_compile_order -fileset sources_1
-report_ip_status -name ip_status 
-upgrade_ip -vlnv xilinx.com:ip:clk_wiz:6.0 [get_ips  pll] -log ip_upgrade.log
-Upgrading 'pll'
-INFO: [Device 21-403] Loading part xc7k325tffg900-2
-INFO: [IP_Flow 19-3422] Upgraded pll (Clocking Wizard 6.0) from revision 13 to revision 15
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'pll'...
-INFO: [Coretcl 2-1525] Wrote upgrade log to 'C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/ip_upgrade.log'.
-upgrade_ip: Time (s): cpu = 00:00:04 ; elapsed = 00:00:18 . Memory (MB): peak = 1529.039 ; gain = 261.758
-export_ip_user_files -of_objects [get_ips pll] -no_script -sync -force -quiet
-generate_target all [get_files  C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.srcs/sources_1/ip/pll_1/pll.xci]
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'pll'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'pll'...
-INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'pll'...
-INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'pll'...
-catch { config_ip_cache -export [get_ips -all pll] }
-INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: pll
-export_ip_user_files -of_objects [get_files C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.srcs/sources_1/ip/pll_1/pll.xci] -no_script -sync -force -quiet
-create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.srcs/sources_1/ip/pll_1/pll.xci]
-launch_runs pll_synth_1 -jobs 8
-INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: pll
-[Wed Apr  1 16:03:55 2026] Launched pll_synth_1...
-Run output will be captured here: C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.runs/pll_synth_1/runme.log
-export_simulation -lib_map_path [list {modelsim=C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.cache/compile_simlib/modelsim} {questa=C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.cache/compile_simlib/questa} {riviera=C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.cache/compile_simlib/riviera} {activehdl=C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.cache/compile_simlib/activehdl}] -of_objects [get_files C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.srcs/sources_1/ip/pll_1/pll.xci] -directory C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.ip_user_files -ipstatic_source_dir C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.ip_user_files/ipstatic -use_ip_compiled_libs -force -quiet
-set_property -dict [list \
-  CONFIG.CLKOUT1_JITTER {157.199} \
-  CONFIG.CLKOUT1_PHASE_ERROR {105.461} \
-  CONFIG.CLKOUT2_JITTER {126.399} \
-  CONFIG.CLKOUT2_PHASE_ERROR {105.461} \
-  CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {150.000} \
-  CONFIG.CLKOUT2_USED {true} \
-  CONFIG.MMCM_CLKFBOUT_MULT_F {9} \
-  CONFIG.MMCM_CLKOUT0_DIVIDE_F {18} \
-  CONFIG.MMCM_CLKOUT1_DIVIDE {6} \
-  CONFIG.MMCM_DIVCLK_DIVIDE {2} \
-  CONFIG.NUM_OUT_CLKS {2} \
-] [get_ips pll]
-generate_target all [get_files  C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.srcs/sources_1/ip/pll_1/pll.xci]
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'pll'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'pll'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'pll'...
-INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'pll'...
-INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'pll'...
-catch { config_ip_cache -export [get_ips -all pll] }
-INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: pll
-export_ip_user_files -of_objects [get_files C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.srcs/sources_1/ip/pll_1/pll.xci] -no_script -sync -force -quiet
-reset_run pll_synth_1
-launch_runs pll_synth_1 -jobs 8
-INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: pll
-[Wed Apr  1 16:08:50 2026] Launched pll_synth_1...
-Run output will be captured here: C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.runs/pll_synth_1/runme.log
-export_simulation -lib_map_path [list {modelsim=C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.cache/compile_simlib/modelsim} {questa=C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.cache/compile_simlib/questa} {riviera=C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.cache/compile_simlib/riviera} {activehdl=C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.cache/compile_simlib/activehdl}] -of_objects [get_files C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.srcs/sources_1/ip/pll_1/pll.xci] -directory C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.ip_user_files -ipstatic_source_dir C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.ip_user_files/ipstatic -use_ip_compiled_libs -force -quiet
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'tb_top'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'F:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'F:/Xilinx/Vivado/2023.2/data/xsim/xsim.ini' copied to run dir:'C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_top' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.sim/sim_1/behav/xsim/blk_mem_gen_0.mif'
+INFO: [SIM-utils-43] Exported 'C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.sim/sim_1/behav/xsim/dram.coe'
+INFO: [SIM-utils-43] Exported 'C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.sim/sim_1/behav/xsim/blk_mem_gen_1.mif'
+INFO: [SIM-utils-43] Exported 'C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.sim/sim_1/behav/xsim/irom.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_top_vlog.prj"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.gen/sources_1/ip/blk_mem_gen_0/sim/blk_mem_gen_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.gen/sources_1/ip/blk_mem_gen_1/sim/blk_mem_gen_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.gen/sources_1/ip/pll_1/pll_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pll_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.gen/sources_1/ip/pll_1/pll.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pll
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ZY/Desktop/riscv-cpu-jyd/新建文件夹/IO.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IO
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ZY/Desktop/riscv-cpu-jyd/新建文件夹/bridge.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bridge
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ZY/Desktop/riscv-cpu-jyd/新建文件夹/cpu_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ZY/Desktop/riscv-cpu-jyd/新建文件夹/exe_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module exe_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ZY/Desktop/riscv-cpu-jyd/新建文件夹/id_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module id_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ZY/Desktop/riscv-cpu-jyd/新建文件夹/if_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module if_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ZY/Desktop/riscv-cpu-jyd/新建文件夹/mem_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ZY/Desktop/riscv-cpu-jyd/新建文件夹/my_cpu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module my_cpu
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ZY/Desktop/riscv-cpu-jyd/新建文件夹/regfiles.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regfiles
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ZY/Desktop/riscv-cpu-jyd/新建文件夹/regfiles_csr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regfiles_csr
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ZY/Desktop/riscv-cpu-jyd/新建文件夹/wb_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module wb_stage
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_7 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log"
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: F:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_7 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 11 for port 'addra' [C:/Users/ZY/Desktop/riscv-cpu-jyd/新建文件夹/my_cpu.v:134]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.IBUFDS
+Compiling module unisims_ver.PLLE2_ADV(CLKFBOUT_MULT=9,CLKIN1...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.pll_clk_wiz
+Compiling module xil_defaultlib.pll
+Compiling module xil_defaultlib.uart(BAUD_RATE=9600)
+Compiling module xil_defaultlib.twin_controller
+Compiling module xil_defaultlib.if_stage
+Compiling module xil_defaultlib.id_stage
+Compiling module xil_defaultlib.exe_stage
+Compiling module xil_defaultlib.mem_stage
+Compiling module xil_defaultlib.wb_stage
+Compiling module xil_defaultlib.regfiles
+Compiling module xil_defaultlib.regfiles_csr
+Compiling module xil_defaultlib.cpu_top
+Compiling module xil_defaultlib.bridge
+Compiling module xil_defaultlib.IO
+Compiling module blk_mem_gen_v8_4_7.blk_mem_gen_v8_4_7_output_stage(...
+Compiling module blk_mem_gen_v8_4_7.blk_mem_gen_v8_4_7_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_7.blk_mem_gen_v8_4_7_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_7.blk_mem_gen_v8_4_7(C_FAMILY="kin...
+Compiling module xil_defaultlib.blk_mem_gen_1
+Compiling module blk_mem_gen_v8_4_7.blk_mem_gen_v8_4_7_output_stage(...
+Compiling module blk_mem_gen_v8_4_7.blk_mem_gen_v8_4_7_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_7.blk_mem_gen_v8_4_7_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_7.blk_mem_gen_v8_4_7(C_FAMILY="kin...
+Compiling module xil_defaultlib.blk_mem_gen_0
+Compiling module xil_defaultlib.seg7
+Compiling module xil_defaultlib.display_seg
+Compiling module xil_defaultlib.my_cpu
+Compiling module xil_defaultlib.top
+Compiling module xil_defaultlib.tb_top
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_top_behav
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 1554.094 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '10' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_top_behav -key {Behavioral:sim_1:Functional:tb_top} -tclbatch {tb_top.tcl} -view {C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/tb_uart_behav.wcfg} -view {C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/tb_top_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/tb_uart_behav.wcfg
+WARNING: Simulation object /tb_uart/clk was not found in the design.
+WARNING: Simulation object /tb_uart/rst_n was not found in the design.
+WARNING: Simulation object /tb_uart/rx was not found in the design.
+WARNING: Simulation object /tb_uart/rx_ready was not found in the design.
+WARNING: Simulation object /tb_uart/rx_data was not found in the design.
+WARNING: Simulation object /tb_uart/tx was not found in the design.
+WARNING: Simulation object /tb_uart/tx_start was not found in the design.
+WARNING: Simulation object /tb_uart/tx_data was not found in the design.
+WARNING: Simulation object /tb_uart/tx_busy was not found in the design.
+WARNING: Simulation object /tb_uart/BIT_PERIOD was not found in the design.
+open_wave_config C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/tb_top_behav.wcfg
+WARNING: Simulation object /tb_top/uut/student_top_inst/w_clk_50Mhz was not found in the design.
+WARNING: Simulation object /tb_top/uut/student_top_inst/w_clk_rst was not found in the design.
+WARNING: Simulation object /tb_top/uut/student_top_inst/virtual_key was not found in the design.
+WARNING: Simulation object /tb_top/uut/student_top_inst/virtual_sw was not found in the design.
+WARNING: Simulation object /tb_top/uut/student_top_inst/virtual_led was not found in the design.
+WARNING: Simulation object /tb_top/uut/student_top_inst/virtual_seg was not found in the design.
+WARNING: Simulation object /tb_top/uut/student_top_inst/seg_driver/count was not found in the design.
+WARNING: Simulation object /tb_top/uut/student_top_inst/seg_driver/ans was not found in the design.
+source tb_top.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb_top.uut.my_cpu_inst.u_inst_ram.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb_top.uut.my_cpu_inst.u_data_ram.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+==== send 0x00 to uart_rx ====
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_top_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:19 . Memory (MB): peak = 1592.492 ; gain = 38.398
+current_wave_config {tb_top_behav.wcfg}
+tb_top_behav.wcfg
+add_wave {{/tb_top/uut/my_cpu_inst/u_io/clk}} {{/tb_top/uut/my_cpu_inst/u_io/clk_cnt}} {{/tb_top/uut/my_cpu_inst/u_io/rst_n}} {{/tb_top/uut/my_cpu_inst/u_io/addr}} {{/tb_top/uut/my_cpu_inst/u_io/wdata}} {{/tb_top/uut/my_cpu_inst/u_io/wen}} {{/tb_top/uut/my_cpu_inst/u_io/ren}} {{/tb_top/uut/my_cpu_inst/u_io/rdata}} {{/tb_top/uut/my_cpu_inst/u_io/led}} {{/tb_top/uut/my_cpu_inst/u_io/s}} {{/tb_top/uut/my_cpu_inst/u_io/key}} {{/tb_top/uut/my_cpu_inst/u_io/sw}} {{/tb_top/uut/my_cpu_inst/u_io/cnt_en_req}} {{/tb_top/uut/my_cpu_inst/u_io/cnt_en_cnt_ff1}} {{/tb_top/uut/my_cpu_inst/u_io/cnt_en_cnt_ff2}} {{/tb_top/uut/my_cpu_inst/u_io/cnt_en_cnt_prev}} {{/tb_top/uut/my_cpu_inst/u_io/cnt_bin}} {{/tb_top/uut/my_cpu_inst/u_io/ms_cnt}} {{/tb_top/uut/my_cpu_inst/u_io/cnt_gray_ff1}} {{/tb_top/uut/my_cpu_inst/u_io/cnt_gray_ff2}} {{/tb_top/uut/my_cpu_inst/u_io/cnt}} {{/tb_top/uut/my_cpu_inst/u_io/io_wen}} {{/tb_top/uut/my_cpu_inst/u_io/cnt_gray}} {{/tb_top/uut/my_cpu_inst/u_io/cnt_read}} 
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run 10 us
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb_top.uut.my_cpu_inst.u_inst_ram.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb_top.uut.my_cpu_inst.u_data_ram.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+==== send 0x00 to uart_rx ====
+run 10 us
+run 10 us
+run 10 ms
+PASS: 0x00 instruction
+==== send 0x81 SW[0]=1 ====
+run: Time (s): cpu = 00:00:01 ; elapsed = 00:00:18 . Memory (MB): peak = 1606.086 ; gain = 0.000
+close_sim
+INFO: xsimkernel Simulation Memory Usage: 21116 KB (Peak: 21116 KB), Simulation CPU Usage: 17843 ms
+INFO: [Simtcl 6-16] Simulation closed
 exit
-INFO: [Common 17-206] Exiting Vivado at Wed Apr  1 16:30:58 2026...
+INFO: [Common 17-206] Exiting Vivado at Fri Apr  3 14:26:53 2026...

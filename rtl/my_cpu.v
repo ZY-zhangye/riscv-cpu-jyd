@@ -2,6 +2,7 @@
 module my_cpu
 (
     input wire clk,
+    input wire clk_cnt,
     input wire rst_n,
     `ifdef DEBUG_INTERFACE_ENABLE
     //debug接口
@@ -16,7 +17,7 @@ module my_cpu
     output wire [31:0] led,
     input wire [7:0] key,
     input wire [63:0] sw,
-    output wire [31:0] s
+    output wire [39:0] seg
 );
 wire [31:0] imem_addr;
 wire [31:0] imem_rdata;
@@ -42,13 +43,14 @@ wire [31:0] io_addr;
 wire [31:0] io_rdata;
 wire [3:0] io_wen;
 wire [31:0] io_wdata;
+wire [31:0] s; // SWG寄存器
 
 
 `ifdef DEBUG_INTERFACE_ENABLE
 assign debug_inst_pc = imem_addr - 4;
 `endif
 
-top u_top(
+cpu_top u_top(
     .clk(clk),
     .rst_n(rst_n),
     `ifdef DEBUG_INTERFACE_ENABLE
@@ -98,6 +100,7 @@ bridge u_bridge(
 
 IO u_io(
     .clk(clk),
+    .clk_cnt(clk_cnt),
     .rst_n(rst_n),
     .ren(io_ren),
     .addr(io_addr),
@@ -131,5 +134,20 @@ data_ram u_data_ram
     .data_ram_wen(data_ram_wen),
     .data_ram_wdata(data_ram_wdata)
 );
+
+display_seg u_display_seg(
+    .clk(clk),
+    .rst(~rst_n),
+    .s(s),
+    .seg1(seg[6:0]),
+    .seg2(seg[16:10]),
+    .seg3(seg[26:20]),
+    .seg4(seg[36:30]),
+    .ans({seg[39:38], seg[29:28], seg[19:18], seg[9:8]})
+);
+assign seg[7] = 1'b0; // 小数点不使用
+assign seg[17] = 1'b0;
+assign seg[27] = 1'b0;
+assign seg[37] = 1'b0;
 
 endmodule

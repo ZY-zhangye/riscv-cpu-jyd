@@ -1,0 +1,151 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Fri Apr  3 13:40:02 2026
+| Host         : ZY running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
+| Design       : top
+| Device       : xc7k325t
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    73 |
+|    Minimum number of control sets                        |    73 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    95 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    73 |
+| >= 0 to < 4        |     3 |
+| >= 4 to < 6        |     4 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |     4 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     3 |
+| >= 14 to < 16      |     0 |
+| >= 16              |    58 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               1 |            1 |
+| No           | No                    | Yes                    |             217 |           70 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |               4 |            2 |
+| Yes          | No                    | Yes                    |            2395 |          968 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-------------------------+---------------------------------------------------------------+--------------------------------------------+------------------+----------------+--------------+
+|       Clock Signal      |                         Enable Signal                         |              Set/Reset Signal              | Slice Load Count | Bel Load Count | Bels / Slice |
++-------------------------+---------------------------------------------------------------+--------------------------------------------+------------------+----------------+--------------+
+|  pll_inst/inst/clk_out2 |                                                               |                                            |                1 |              1 |         1.00 |
+|  pll_inst/inst/clk_out2 |                                                               | twin_controller_inst/bbstub_locked         |                1 |              1 |         1.00 |
+|  pll_inst/inst/clk_out1 | uart_inst/tx_i_1_n_0                                          | twin_controller_inst/bbstub_locked         |                1 |              1 |         1.00 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_exe_stage/ena                             |                                            |                2 |              4 |         2.00 |
+|  pll_inst/inst/clk_out1 | uart_inst/rx_bit_cnt                                          | twin_controller_inst/bbstub_locked         |                1 |              4 |         4.00 |
+|  pll_inst/inst/clk_out1 | uart_inst/tx_bit_cnt                                          | twin_controller_inst/bbstub_locked         |                1 |              4 |         4.00 |
+|  pll_inst/inst/clk_out1 | twin_controller_inst/send_cnt                                 | twin_controller_inst/bbstub_locked         |                2 |              5 |         2.50 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/sel                                               | twin_controller_inst/bbstub_locked         |                2 |              6 |         3.00 |
+|  pll_inst/inst/clk_out1 | uart_inst/rx_data[7]_i_1_n_0                                  | twin_controller_inst/bbstub_locked         |                2 |              8 |         4.00 |
+|  pll_inst/inst/clk_out1 | twin_controller_inst/tx_start_next                            | twin_controller_inst/bbstub_locked         |                2 |              8 |         4.00 |
+|  pll_inst/inst/clk_out1 | uart_inst/rx_shift_1                                          | twin_controller_inst/bbstub_locked         |                2 |              8 |         4.00 |
+|  pll_inst/inst/clk_out1 | uart_inst/tx_shift                                            | twin_controller_inst/bbstub_locked         |                2 |              9 |         4.50 |
+|  pll_inst/inst/clk_out1 | uart_inst/rx_ready_cnt[12]_i_1_n_0                            | twin_controller_inst/bbstub_locked         |                3 |             13 |         4.33 |
+|  pll_inst/inst/clk_out1 | uart_inst/rx_cnt_2                                            | twin_controller_inst/bbstub_locked         |                4 |             13 |         3.25 |
+|  pll_inst/inst/clk_out1 | uart_inst/tx_cnt_0                                            | twin_controller_inst/bbstub_locked         |                3 |             13 |         4.33 |
+|  pll_inst/inst/clk_out1 |                                                               | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |                5 |             19 |         3.80 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_mem_stage/exe_mem_bus_r_reg[32]_2         | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               12 |             30 |         2.50 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_mem_stage/exe_mem_bus_r_reg[38]_0         | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               11 |             31 |         2.82 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_mem_stage/exe_mem_bus_r_reg[43]_0[0]      | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               10 |             32 |         3.20 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_mem_stage/exe_mem_bus_r_reg[32]_0[0]      | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               12 |             32 |         2.67 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_mem_stage/exe_mem_bus_r_reg[43]_2[0]      | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               12 |             32 |         2.67 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_mem_stage/exe_mem_bus_r_reg[43]_1[0]      | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               11 |             32 |         2.91 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_mem_stage/exe_mem_bus_r_reg[32]_1[0]      | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               12 |             32 |         2.67 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_mem_stage/exe_mem_bus_r_reg[38]_2[0]      | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               10 |             32 |         3.20 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_mem_stage/timer_flag_reg_0[0]             | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               16 |             32 |         2.00 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_exe_stage/ds_to_es_bus_r_reg[119]_0[0]    | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |                7 |             32 |         4.57 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_exe_stage/ds_to_es_bus_r_reg[4]_1         | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               12 |             32 |         2.67 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_wb_stage/mem_wb_bus_r_reg[66]_1[0]        | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               13 |             32 |         2.46 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_wb_stage/mem_wb_bus_r_reg[66]_11[0]       | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               18 |             32 |         1.78 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_wb_stage/E[0]                             | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               19 |             32 |         1.68 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_wb_stage/mem_wb_bus_r_reg[66]_0[0]        | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               14 |             32 |         2.29 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_wb_stage/mem_wb_bus_r_reg[66]_12[0]       | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               14 |             32 |         2.29 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_wb_stage/mem_wb_bus_r_reg[66]_10[0]       | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               15 |             32 |         2.13 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_wb_stage/mem_wb_bus_r_reg[66]_13[0]       | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               16 |             32 |         2.00 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_wb_stage/mem_wb_bus_r_reg[66]_14[0]       | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               17 |             32 |         1.88 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_wb_stage/mem_wb_bus_r_reg[66]_25[0]       | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               15 |             32 |         2.13 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_wb_stage/mem_wb_bus_r_reg[66]_24[0]       | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |                8 |             32 |         4.00 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_wb_stage/mem_wb_bus_r_reg[66]_17[0]       | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               15 |             32 |         2.13 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_wb_stage/mem_wb_bus_r_reg[66]_22[0]       | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               10 |             32 |         3.20 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_wb_stage/mem_wb_bus_r_reg[66]_4[0]        | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               17 |             32 |         1.88 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_wb_stage/mem_wb_bus_r_reg[66]_26[0]       | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               22 |             32 |         1.45 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_wb_stage/mem_wb_bus_r_reg[66]_21[0]       | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               15 |             32 |         2.13 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_wb_stage/mem_wb_bus_r_reg[66]_23[0]       | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               11 |             32 |         2.91 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_wb_stage/mem_wb_bus_r_reg[66]_8[0]        | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               10 |             32 |         3.20 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_wb_stage/mem_wb_bus_r_reg[66]_27[0]       | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               20 |             32 |         1.60 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_wb_stage/mem_wb_bus_r_reg[66]_3[0]        | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               22 |             32 |         1.45 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_wb_stage/mem_wb_bus_r_reg[66]_28[0]       | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               16 |             32 |         2.00 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_wb_stage/mem_wb_bus_r_reg[66]_18[0]       | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               12 |             32 |         2.67 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_wb_stage/mem_wb_bus_r_reg[66]_9[0]        | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               15 |             32 |         2.13 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_wb_stage/mem_wb_bus_r_reg[66]_15[0]       | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               21 |             32 |         1.52 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_wb_stage/mem_wb_bus_r_reg[66]_20[0]       | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               14 |             32 |         2.29 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_wb_stage/mem_wb_bus_r_reg[66]_2[0]        | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               16 |             32 |         2.00 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_wb_stage/mem_wb_bus_r_reg[66]_6[0]        | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               12 |             32 |         2.67 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_wb_stage/mem_wb_bus_r_reg[66]_7[0]        | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               13 |             32 |         2.46 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_wb_stage/mem_wb_bus_r_reg[66]_16[0]       | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               15 |             32 |         2.13 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_wb_stage/mem_wb_bus_r_reg[66]_19[0]       | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |                8 |             32 |         4.00 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_wb_stage/mem_wb_bus_r_reg[66]_29[0]       | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               16 |             32 |         2.00 |
+|  pll_inst/inst/clk_out1 | my_cpu_inst/u_io/cnt_bin[0]_i_1_n_0                           | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |                8 |             32 |         4.00 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_wb_stage/mem_wb_bus_r_reg[66]_5[0]        | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               14 |             32 |         2.29 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_mem_stage/exception_code_em_r_reg[5]_1[0] | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |                8 |             32 |         4.00 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_mem_stage/exe_mem_bus_r_reg[33]_1[0]      | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               10 |             32 |         3.20 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_mem_stage/exe_mem_bus_r_reg[32]_3[0]      | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               13 |             32 |         2.46 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_mem_stage/exe_mem_bus_r_reg[38]_3[0]      | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               12 |             32 |         2.67 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_mem_stage/exe_mem_bus_r_reg[38]_1[0]      | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |                6 |             32 |         5.33 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_id_stage/fs_valid_reg[0]                  | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               17 |             33 |         1.94 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_mem_stage/mem_wb_bus_r0                   | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               23 |             38 |         1.65 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_exe_stage/ds_to_es_bus_r_reg[4]_0[0]      | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               29 |             64 |         2.21 |
+|  pll_inst/inst/clk_out1 |                                                               | twin_controller_inst/bbstub_locked         |               32 |             84 |         2.62 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_if_stage/fs_valid_reg_0[0]                | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               28 |             97 |         3.46 |
+|  pll_inst/inst/clk_out2 |                                                               | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               32 |            113 |         3.53 |
+|  pll_inst/inst/clk_out1 | uart_inst/E[0]                                                | twin_controller_inst/bbstub_locked         |               37 |            134 |         3.62 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_exe_stage/E[0]                            | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               65 |            160 |         2.46 |
+|  pll_inst/inst/clk_out2 | my_cpu_inst/u_top/u_id_stage/ds_valid_reg_0[0]                | my_cpu_inst/u_top/u_regfiles/rst_n_reg_reg |               99 |            244 |         2.46 |
++-------------------------+---------------------------------------------------------------+--------------------------------------------+------------------+----------------+--------------+
+
+

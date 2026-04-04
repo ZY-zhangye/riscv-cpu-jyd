@@ -20,10 +20,10 @@ end
 
 always @ (posedge clk) begin
     if (inst_ram_ren) begin
-        inst_ram_rdata <= mem[inst_ram_addr[31:2]]; // 按字对齐访问
+        inst_ram_rdata <= mem[inst_ram_addr[19:2]]; // 按字对齐访问
     end
     if (inst_ram_wen) begin
-        mem[inst_ram_addr[31:2]] <= inst_ram_wdata; // 按字对齐访问
+        mem[inst_ram_addr[19:2]] <= inst_ram_wdata; // 按字对齐访问
     end
 end
 

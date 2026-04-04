@@ -55,6 +55,20 @@ if {$::dispatch::connected} {
   }
 }
 
+proc create_report { reportName command } {
+  set status "."
+  append status $reportName ".fail"
+  if { [file exists $status] } {
+    eval file delete [glob $status]
+  }
+  send_msg_id runtcl-4 info "Executing : $command"
+  set retval [eval catch { $command } msg]
+  if { $retval != 0 } {
+    set fp [open $status w]
+    close $fp
+    send_msg_id runtcl-5 warning "$msg"
+  }
+}
 OPTRACE "pll_synth_1" START { ROLLUP_AUTO }
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
@@ -67,7 +81,7 @@ set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.cache/wt [current_project]
 set_property parent.project_path C:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.xpr [current_project]
-set_property XPM_LIBRARIES XPM_CDC [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo c:/Users/ZY/Desktop/riscv-cpu-jyd/digital_twin/digital_twin.cache/ip [current_project]
@@ -144,7 +158,7 @@ set_param constraints.enableBinaryConstraints false
 write_checkpoint -force -noxdef pll.dcp
 OPTRACE "write_checkpoint" END { }
 OPTRACE "synth reports" START { REPORT }
-generate_parallel_reports -reports { "report_utilization -file pll_utilization_synth.rpt -pb pll_utilization_synth.pb"  } 
+create_report "pll_synth_1_synth_report_utilization_0" "report_utilization -file pll_utilization_synth.rpt -pb pll_utilization_synth.pb"
 OPTRACE "synth reports" END { }
 
 if { [catch {

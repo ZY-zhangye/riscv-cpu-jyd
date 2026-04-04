@@ -1,0 +1,55 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Fri Apr  3 13:41:18 2026
+| Host         : ZY running 64-bit major release  (build 9200)
+| Command      : report_methodology -file top_methodology_drc_routed.rpt -pb top_methodology_drc_routed.pb -rpx top_methodology_drc_routed.rpx
+| Design       : top
+| Device       : xc7k325tffg900-2
+| Speed File   : -2
+| Design State : Fully Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 1
++---------+----------+------------------------------+------------+
+| Rule    | Severity | Description                  | Violations |
++---------+----------+------------------------------+------------+
+| LUTAR-1 | Warning  | LUT drives async reset alert | 1          |
++---------+----------+------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell my_cpu_inst/u_top/u_regfiles/fs_valid_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) my_cpu_inst/u_io/led_reg[25]_lopt_replica/CLR,
+my_cpu_inst/u_io/led_reg[26]_lopt_replica/CLR,
+my_cpu_inst/u_io/led_reg[27]_lopt_replica/CLR,
+my_cpu_inst/u_io/led_reg[28]_lopt_replica/CLR,
+my_cpu_inst/u_io/led_reg[29]_lopt_replica/CLR,
+my_cpu_inst/u_io/led_reg[2]_lopt_replica/CLR,
+my_cpu_inst/u_io/led_reg[30]_lopt_replica/CLR,
+my_cpu_inst/u_io/led_reg[31]_lopt_replica/CLR,
+my_cpu_inst/u_io/led_reg[3]_lopt_replica/CLR,
+my_cpu_inst/u_io/led_reg[4]_lopt_replica/CLR,
+my_cpu_inst/u_io/led_reg[5]_lopt_replica/CLR,
+my_cpu_inst/u_io/led_reg[6]_lopt_replica/CLR,
+my_cpu_inst/u_io/led_reg[7]_lopt_replica/CLR,
+my_cpu_inst/u_io/led_reg[8]_lopt_replica/CLR,
+my_cpu_inst/u_io/led_reg[9]_lopt_replica/CLR
+ (the first 15 of 2301 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+

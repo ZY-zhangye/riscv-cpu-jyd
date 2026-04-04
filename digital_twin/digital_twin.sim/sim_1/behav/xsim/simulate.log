@@ -1,9 +1,18 @@
 Time resolution is 1 ps
-==== 发送非法指令0x00，期望无任何串口回复 ====
-PASS: 非法指令无串口输出，逻辑正确！
-==== 发送写指令，设置 SW[0]=1 ====
-==== 发送写指令，设置 SW[31]=1 ====
-==== 发送写指令，设置 KEY[0]=1 ====
-==== 发送读指令，收集18个字节 ====
-RX[0] = bf
-INFO: xsimkernel Simulation Memory Usage: 16836 KB (Peak: 16836 KB), Simulation CPU Usage: 183483 ms
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb_top.uut.my_cpu_inst.u_inst_ram.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb_top.uut.my_cpu_inst.u_data_ram.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+==== send 0x00 to uart_rx ====
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb_top.uut.my_cpu_inst.u_inst_ram.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb_top.uut.my_cpu_inst.u_data_ram.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+==== send 0x00 to uart_rx ====
+PASS: 0x00 instruction
+==== send 0x81 SW[0]=1 ====
+INFO: xsimkernel Simulation Memory Usage: 21116 KB (Peak: 21116 KB), Simulation CPU Usage: 17843 ms

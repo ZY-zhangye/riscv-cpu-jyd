@@ -52,8 +52,19 @@ assign io_wdata = 32'b0;
 assign dmem_rdata = data_ram_rdata;
 `else
 // 地址划分
-wire is_data_ram = (dmem_addr >= 32'h4000_0000) && (dmem_addr < 32'hF000_0000);
-wire is_io      = (dmem_addr >= 32'hF000_0000) && (dmem_addr <= 32'hFFFF_FFFF);
+wire is_data_ram = (dmem_addr >= 32'h8010_0000) && (dmem_addr < 32'h8013_FFFF);
+wire is_io      = (dmem_addr >= 32'h8020_0000) && (dmem_addr <= 32'h8020_00FF);
+reg is_data_ram_reg;
+reg is_io_reg;
+always @ (posedge clk or negedge rst_n) begin
+    if (!rst_n) begin
+        is_data_ram_reg <= 1'b0;
+        is_io_reg <= 1'b0;
+    end else begin
+        is_data_ram_reg <= is_data_ram;
+        is_io_reg <= is_io;
+    end
+end
 // data_ram接口
 assign data_ram_ren   = dmem_en && is_data_ram;
 assign data_ram_addr  = dmem_addr;
@@ -65,8 +76,8 @@ assign io_addr  = dmem_addr;
 assign io_wen   = is_io ? dmem_wen : 4'b0000;
 assign io_wdata = dmem_wdata;
 // 读数据返回
-assign dmem_rdata = is_data_ram ? data_ram_rdata :
-                    is_io      ? io_rdata       : 32'b0;
+assign dmem_rdata = is_data_ram_reg ? data_ram_rdata :
+                    is_io_reg      ? io_rdata       : 32'b0;
 `endif
 
 endmodule
