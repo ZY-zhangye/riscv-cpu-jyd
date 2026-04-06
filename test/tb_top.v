@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 `define MEM_HEX_PATH "C:\\Users\\ZY\\Desktop\\riscv-cpu-jyd\\hex\\riscv-tests\\rv32-p-riscv.hex"
 // 加载内存文件
 /*# 定义【标准整数运算指令集】数组 - RV32I 基础指令全集

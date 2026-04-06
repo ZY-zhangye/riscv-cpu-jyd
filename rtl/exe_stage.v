@@ -27,6 +27,11 @@ module exe_stage (
     //跳转指令与分支指令的目标地址与信号
     output wire [31:0] br_target,
     output wire br_taken,
+    //分支预测器反馈信号
+    output wire bp_update_valid,
+    output wire [31:0] bp_update_pc,
+    output wire bp_update_taken,
+    output wire [31:0] bp_update_target,
     //异常相关信号
     input wire [5:0] exception_code_de,
     input wire [31:0] exception_mtval_de,
@@ -71,6 +76,8 @@ always @(posedge clk or negedge rst_n) begin
 end
 
 // 从打包总线中解包出的控制与数据信号
+wire predict_taken;
+wire [31:0] predict_target;
 wire [31:0] exe_pc;
 wire [31:0] exe_imm;
 wire [31:0] exe_rs1_data;
@@ -91,6 +98,8 @@ wire exe_mem_we;
 wire exe_mem_re;
 wire [2:0] exe_mem_size;
 assign {
+    predict_taken,       // 1-bit 预测是否跳转
+    predict_target,      // 32-bit 预测的跳转目标地址
     exe_pc,
     exe_imm,
     exe_rs1_data,
@@ -211,8 +220,23 @@ wire br_flag = (br_beq  &  alu_beq ) |
                (br_bge  & ~alu_blt ) |
                (br_bltu &  alu_bltu) |
                (br_bgeu & ~alu_bltu);
-assign br_taken = exe_jmp_flag || (|exe_br_type && br_flag);
-assign br_target = exe_jmp_flag ? alu_jalr : alu_result;
+
+wire is_cf_inst = exe_jmp_flag || (|exe_br_type);
+wire actual_taken = exe_jmp_flag || (|exe_br_type && br_flag);
+wire [31:0] actual_target = exe_jmp_flag ? alu_jalr : alu_result;
+wire predict_dir_mismatch = (predict_taken != actual_taken);
+wire predict_target_mismatch = predict_taken && actual_taken && (predict_target != actual_target);
+wire br_mispredict = is_cf_inst && (predict_dir_mismatch || predict_target_mismatch);
+
+// 复用原有br_taken/br_target通路做纠正：仅预测失败时重定向
+assign br_taken = es_valid && br_mispredict;
+assign br_target = actual_taken ? actual_target : (exe_pc + 32'd4);
+
+// 向分支预测器反馈实际结果
+assign bp_update_valid = es_valid && is_cf_inst && !exception_flag;
+assign bp_update_pc = exe_pc;
+assign bp_update_taken = actual_taken;
+assign bp_update_target = actual_target;
 
 // 访存专用通路：地址/写使能/写数据完全独立于ALU结果选择链
 wire [31:0] mem_addr_calc = exe_rs1_data + exe_imm;
@@ -282,7 +306,7 @@ assign exe_mem_bus_out = {
 };
 
 // 输出异常相关信号
-wire exception_iam = br_taken && (br_target[1:0] != 2'b00); // 判断分支跳转目标地址是否为非4字节对齐
+wire exception_iam = actual_taken && (actual_target[1:0] != 2'b00); // 判断分支跳转目标地址是否为非4字节对齐
 wire exception_lam = ((!exe_mem_size[0] && exe_mem_addr_bits != 2'b00 && exe_mem_re) ||
                     (exe_mem_size[0] && !exe_mem_size[1] && exe_mem_addr_bit0 != 1'b0 && exe_mem_re)); // 32位访存时，地址必须为4字节对齐;16位访存时，地址必须为2字节对齐
 wire exception_sam = (exe_mem_we && !exe_mem_size[0] && exe_mem_addr_bits != 2'b00) || (exe_mem_we && exe_mem_size[0] && !exe_mem_size[1] && exe_mem_addr_bit0 != 1'b0); // 8位访存时，地址必须为4字节对齐;16位访存时，地址必须为2字节对齐
@@ -290,7 +314,7 @@ assign exception_code_em = exception_iam ? 6'b100000 :
                            exception_lam ? 6'b100100 :
                            exception_sam ? 6'b100110 :
                            exception_code_reg; 
-assign exception_mtval_em = exception_iam ? br_target : 
+assign exception_mtval_em = exception_iam ? actual_target : 
                             (exception_lam || exception_sam) ? mem_addr_calc :
                             exception_mtval_reg;
 

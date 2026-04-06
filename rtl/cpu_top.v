@@ -30,6 +30,10 @@ wire [5:0] exception_code_fd;
 wire [31:0] exception_mtval_fd;
 wire exception_flag;
 wire [31:0] exception_addr;
+wire predict_valid;
+wire predict_taken;
+wire [31:0] predict_target;
+wire [31:0] predict_pc_out;
 // ID 阶段
 wire ds_to_es_valid;
 wire es_allowin;
@@ -55,6 +59,10 @@ wire exe_id_csr_we;
 wire [11:0] exe_id_csr_addr;
 wire [31:0] br_target;
 wire br_taken;
+wire bp_update_valid;
+wire [31:0] bp_update_pc;
+wire bp_update_taken;
+wire [31:0] bp_update_target;
 wire [5:0] exception_code_em;
 wire [31:0] exception_mtval_em;
 // MEM 阶段
@@ -97,7 +105,11 @@ if_stage u_if_stage (
     .exception_code_fd(exception_code_fd),
     .exception_mtval_fd(exception_mtval_fd),
     .exception_flag(exception_flag),
-    .exception_addr(exception_addr)
+    .exception_addr(exception_addr),
+    .predict_valid(predict_valid),
+    .predict_taken(predict_taken),
+    .predict_target(predict_target),
+    .predict_pc_out(predict_pc_out)
 );
 
 id_stage u_id_stage (
@@ -158,11 +170,29 @@ exe_stage u_exe_stage (
     .exe_id_csr_addr(exe_id_csr_addr),
     .br_target(br_target),
     .br_taken(br_taken),
+    .bp_update_valid(bp_update_valid),
+    .bp_update_pc(bp_update_pc),
+    .bp_update_taken(bp_update_taken),
+    .bp_update_target(bp_update_target),
     .exception_code_de(exception_code_de),
     .exception_mtval_de(exception_mtval_de),
     .exception_code_em(exception_code_em),
     .exception_mtval_em(exception_mtval_em),
     .exception_flag(exception_flag)
+);
+
+branch_predictor u_branch_predictor (
+    .clk(clk),
+    .rst_n(rst_n),
+    .pc_in(predict_pc_out),
+    .inst_in(imem_rdata),
+    .branch_result_valid(bp_update_valid),
+    .branch_pc(bp_update_pc),
+    .branch_taken(bp_update_taken),
+    .branch_target(bp_update_target),
+    .predict_valid(predict_valid),
+    .predict_taken(predict_taken),
+    .predict_target(predict_target)
 );
 
 mem_stage u_mem_stage (

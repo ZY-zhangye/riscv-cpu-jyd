@@ -13,17 +13,26 @@ module inst_ram #(
     input wire [31:0] inst_ram_wdata
 );
 
-reg [31:0] mem [0:3000];
+reg [31:0] mem [0:2048-1]; // 512KB字节寻址空间，按字对齐访问
+task automatic load_mem;
+    integer i;
+    begin
+        for (i = 0; i < 2048; i = i + 1) begin
+            mem[i] = 32'b0;
+        end
+        $readmemh(MEM_HEX_PATH, mem);
+    end
+endtask
 initial begin
-    $readmemh(MEM_HEX_PATH, mem);
+    load_mem();
 end
 
 always @ (posedge clk) begin
     if (inst_ram_ren) begin
-        inst_ram_rdata <= mem[inst_ram_addr[19:2]]; // 按字对齐访问
+        inst_ram_rdata <= mem[inst_ram_addr[12:2]]; // 按字对齐访问
     end
     if (inst_ram_wen) begin
-        mem[inst_ram_addr[19:2]] <= inst_ram_wdata; // 按字对齐访问
+        mem[inst_ram_addr[12:2]] <= inst_ram_wdata; // 按字对齐访问
     end
 end
 

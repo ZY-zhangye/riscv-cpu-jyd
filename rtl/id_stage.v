@@ -83,7 +83,9 @@ always @(posedge clk or negedge rst_n) begin
 end
 wire [31:0] id_inst;
 wire [31:0] id_pc;
-assign {id_inst,id_pc} = if_id_bus_reg;
+wire [31:0] predict_target;
+wire predict_taken;
+assign {predict_taken, predict_target, id_inst, id_pc} = if_id_bus_reg;
 
 //译码逻辑
 wire [6:0] opcode = id_inst[6:0];
@@ -304,6 +306,8 @@ assign mem_size [2] = inst_lb || inst_lh; // 符号扩展
 
 //总线打包
 assign id_exe_bus_out = {
+    predict_taken,
+    predict_target,
     id_pc,         // [31:0] 指令地址
     imm,        // [31:0] 立即数
     rs1_data,   // [31:0] rs1_data

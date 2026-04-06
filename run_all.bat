@@ -5,7 +5,7 @@ set MI_INSTS=csr scall sbreak ma_fetch
 REM set UM_INSTS=mul mulh mulhu mulhsu
 
 REM === 仿真前编译 ===
-vlog -sv rtl/*.v test/*.v
+vlog -sv rtl/*.v rtl/*.sv test/*.v
 if errorlevel 1 (
     echo Compile failed!
     exit /b 1

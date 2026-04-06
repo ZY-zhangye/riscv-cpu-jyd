@@ -21,9 +21,8 @@
 
 
 module top(
-    input wire  w_clk_50Mhz         ,
-    input wire clk_cnt,
-    input wire  w_clk_rst           ,
+    input wire clk_in1_p,
+    input wire clk_in1_n,
     input  wire i_uart_rx           ,
     output wire o_uart_tx           ,
 
@@ -40,6 +39,15 @@ module top(
     wire tx_start;
     wire [7:0] tx_data;
     wire tx_busy;
+    wire w_clk_50Mhz;
+    wire clk_cnt;
+
+    pll pll_inst (
+        .clk_in1_p(clk_in1_p),
+        .clk_in1_n(clk_in1_n),
+        .clk_out1(w_clk_50Mhz),
+        .locked(w_clk_rst)
+    );
 
 
     uart #(

@@ -18,7 +18,12 @@ module if_stage (
     output wire [5:0] exception_code_fd,
     output wire [31:0] exception_mtval_fd,
     input wire exception_flag,
-    input wire [31:0] exception_addr
+    input wire [31:0] exception_addr,
+    //分支预测相关信号
+    input wire predict_valid,
+    input wire predict_taken,
+    input wire [31:0] predict_target,
+    output wire [31:0] predict_pc_out
 );
 
     localparam nop_inst = 32'h0000_0013; // addi x0, x0, 0
@@ -30,6 +35,7 @@ module if_stage (
     assign seq_pc = fs_pc + 4;
     assign next_pc = exception_flag ? exception_addr :
                      br_jmp_flag ? br_target :
+                     predict_valid && predict_taken ? predict_target :
                      seq_pc;
 
     //握手协议
@@ -54,9 +60,10 @@ module if_stage (
     assign pc_out = next_pc;
     assign fs_inst = inst_in;
     assign inst_ren = fs_allowin; 
+    assign predict_pc_out = fs_pc; // 输出当前PC供分支预测使用
 
     //输出到译码阶段的总线
-    assign if_id_bus_out = {fs_inst, fs_pc};
+    assign if_id_bus_out = {(predict_valid && predict_taken), predict_target, fs_inst, fs_pc};
 
     //异常相关输出
     wire exception_iam = pc_out[1:0] != 2'b00 && fs_allowin; // 判断是否为非4字节对齐的地址
